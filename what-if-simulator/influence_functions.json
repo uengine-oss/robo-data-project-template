@@ -1,0 +1,1085 @@
+{
+  "generated_at": "2026-01-24T12:31:20.690502",
+  "total_functions": 83,
+  "functions": [
+    {
+      "type": "linear",
+      "source": "mkt_spend",
+      "target": "brand_equity",
+      "params": {
+        "slope": 0.143,
+        "intercept": 31.5208,
+        "r_squared": 0.3725,
+        "p_value": 7.7e-05,
+        "std_error": 0.0318
+      },
+      "formula": "brand_equity = 0.1430 * mkt_spend + 31.5208"
+    },
+    {
+      "type": "linear",
+      "source": "cogs",
+      "target": "price",
+      "params": {
+        "slope": 1.2343,
+        "intercept": -7.5376,
+        "r_squared": 0.7201,
+        "p_value": 0.0,
+        "std_error": 0.132
+      },
+      "formula": "price = 1.2343 * cogs + -7.5376"
+    },
+    {
+      "type": "linear",
+      "source": "sales",
+      "target": "loyalty",
+      "params": {
+        "slope": 0.0041,
+        "intercept": 3.3286,
+        "r_squared": 0.3059,
+        "p_value": 0.000468,
+        "std_error": 0.001
+      },
+      "formula": "loyalty = 0.0041 * sales + 3.3286"
+    },
+    {
+      "type": "linear",
+      "source": "mkt_spend",
+      "target": "loyalty",
+      "params": {
+        "slope": -0.0847,
+        "intercept": 59.4854,
+        "r_squared": 0.0609,
+        "p_value": 0.146928,
+        "std_error": 0.0571
+      },
+      "formula": "loyalty = -0.0847 * mkt_spend + 59.4854"
+    },
+    {
+      "type": "linear",
+      "source": "delivery_time",
+      "target": "loyalty",
+      "params": {
+        "slope": -2.3102,
+        "intercept": 55.9919,
+        "r_squared": 0.0267,
+        "p_value": 0.340723,
+        "std_error": 2.3908
+      },
+      "formula": "loyalty = -2.3102 * delivery_time + 55.9919"
+    },
+    {
+      "type": "linear",
+      "source": "delivery_time",
+      "target": "csat",
+      "params": {
+        "slope": -0.1236,
+        "intercept": 1.0021,
+        "r_squared": 0.9858,
+        "p_value": 0.0,
+        "std_error": 0.0025
+      },
+      "formula": "csat = -0.1236 * delivery_time + 1.0021"
+    },
+    {
+      "type": "linear",
+      "source": "service_level",
+      "target": "csat",
+      "params": {
+        "slope": 0.7321,
+        "intercept": 0.0818,
+        "r_squared": 0.9834,
+        "p_value": 0.0,
+        "std_error": 0.0163
+      },
+      "formula": "csat = 0.7321 * service_level + 0.0818"
+    },
+    {
+      "type": "linear",
+      "source": "refund_rate",
+      "target": "csat",
+      "params": {
+        "slope": -3.8367,
+        "intercept": 0.8911,
+        "r_squared": 0.9831,
+        "p_value": 0.0,
+        "std_error": 0.0862
+      },
+      "formula": "csat = -3.8367 * refund_rate + 0.8911"
+    },
+    {
+      "type": "linear",
+      "source": "fx_rate",
+      "target": "price",
+      "params": {
+        "slope": 0.1066,
+        "intercept": -8.9984,
+        "r_squared": 0.9378,
+        "p_value": 0.0,
+        "std_error": 0.0047
+      },
+      "formula": "price = 0.1066 * fx_rate + -8.9984"
+    },
+    {
+      "type": "linear",
+      "source": "csat",
+      "target": "loyalty",
+      "params": {
+        "slope": 19.7185,
+        "intercept": 36.5653,
+        "r_squared": 0.0302,
+        "p_value": 0.311061,
+        "std_error": 19.1755
+      },
+      "formula": "loyalty = 19.7185 * csat + 36.5653"
+    },
+    {
+      "type": "linear",
+      "source": "fx_rate",
+      "target": "brand_equity",
+      "params": {
+        "slope": 0.0177,
+        "intercept": 25.1929,
+        "r_squared": 0.0792,
+        "p_value": 0.096313,
+        "std_error": 0.0104
+      },
+      "formula": "brand_equity = 0.0177 * fx_rate + 25.1929"
+    },
+    {
+      "type": "linear",
+      "source": "demand",
+      "target": "delivery_time",
+      "params": {
+        "slope": -0.0309,
+        "intercept": 5.4546,
+        "r_squared": 0.2575,
+        "p_value": 0.001583,
+        "std_error": 0.009
+      },
+      "formula": "delivery_time = -0.0309 * demand + 5.4546"
+    },
+    {
+      "type": "linear",
+      "source": "fx_rate",
+      "target": "cogs",
+      "params": {
+        "slope": 0.066,
+        "intercept": 24.6651,
+        "r_squared": 0.7611,
+        "p_value": 0.0,
+        "std_error": 0.0063
+      },
+      "formula": "cogs = 0.0660 * fx_rate + 24.6651"
+    },
+    {
+      "type": "linear",
+      "source": "sales",
+      "target": "delivery_time",
+      "params": {
+        "slope": -0.0003,
+        "intercept": 6.6507,
+        "r_squared": 0.4523,
+        "p_value": 7e-06,
+        "std_error": 0.0001
+      },
+      "formula": "delivery_time = -0.0003 * sales + 6.6507"
+    },
+    {
+      "type": "linear",
+      "source": "profit",
+      "target": "loyalty",
+      "params": {
+        "slope": 0.0019,
+        "intercept": 46.7375,
+        "r_squared": 0.0143,
+        "p_value": 0.4877,
+        "std_error": 0.0028
+      },
+      "formula": "loyalty = 0.0019 * profit + 46.7375"
+    },
+    {
+      "type": "linear",
+      "source": "profit",
+      "target": "brand_equity",
+      "params": {
+        "slope": 0.0085,
+        "intercept": 33.9297,
+        "r_squared": 0.5902,
+        "p_value": 0.0,
+        "std_error": 0.0012
+      },
+      "formula": "brand_equity = 0.0085 * profit + 33.9297"
+    },
+    {
+      "type": "linear",
+      "source": "brand_equity",
+      "target": "loyalty",
+      "params": {
+        "slope": 0.7878,
+        "intercept": 12.2811,
+        "r_squared": 0.289,
+        "p_value": 0.000722,
+        "std_error": 0.2119
+      },
+      "formula": "loyalty = 0.7878 * brand_equity + 12.2811"
+    },
+    {
+      "type": "linear",
+      "source": "sales",
+      "target": "profit",
+      "params": {
+        "slope": 0.3239,
+        "intercept": -2095.5972,
+        "r_squared": 0.5134,
+        "p_value": 1e-06,
+        "std_error": 0.0541
+      },
+      "formula": "profit = 0.3239 * sales + -2095.5972"
+    },
+    {
+      "type": "linear",
+      "source": "refund_rate",
+      "target": "loyalty",
+      "params": {
+        "slope": -45.0054,
+        "intercept": 52.4128,
+        "r_squared": 0.0105,
+        "p_value": 0.552167,
+        "std_error": 74.9489
+      },
+      "formula": "loyalty = -45.0054 * refund_rate + 52.4128"
+    },
+    {
+      "type": "linear",
+      "source": "loyalty",
+      "target": "brand_equity",
+      "params": {
+        "slope": 0.3669,
+        "intercept": 29.4324,
+        "r_squared": 0.289,
+        "p_value": 0.000722,
+        "std_error": 0.0987
+      },
+      "formula": "brand_equity = 0.3669 * loyalty + 29.4324"
+    },
+    {
+      "type": "linear",
+      "source": "service_level",
+      "target": "loyalty",
+      "params": {
+        "slope": 10.9523,
+        "intercept": 41.0029,
+        "r_squared": 0.0171,
+        "p_value": 0.447532,
+        "std_error": 14.2527
+      },
+      "formula": "loyalty = 10.9523 * service_level + 41.0029"
+    },
+    {
+      "type": "linear",
+      "source": "price",
+      "target": "margin",
+      "params": {
+        "slope": 0.0022,
+        "intercept": -0.1362,
+        "r_squared": 0.3762,
+        "p_value": 7e-05,
+        "std_error": 0.0005
+      },
+      "formula": "margin = 0.0022 * price + -0.1362"
+    },
+    {
+      "type": "linear",
+      "source": "fx_rate",
+      "target": "loyalty",
+      "params": {
+        "slope": -0.0391,
+        "intercept": 99.6333,
+        "r_squared": 0.1797,
+        "p_value": 0.009971,
+        "std_error": 0.0143
+      },
+      "formula": "loyalty = -0.0391 * fx_rate + 99.6333"
+    },
+    {
+      "type": "linear",
+      "source": "profit",
+      "target": "margin",
+      "params": {
+        "slope": 0.0001,
+        "intercept": 0.0329,
+        "r_squared": 0.9307,
+        "p_value": 0.0,
+        "std_error": 0.0
+      },
+      "formula": "margin = 0.0001 * profit + 0.0329"
+    },
+    {
+      "type": "linear",
+      "source": "fx_rate",
+      "target": "price_volatility",
+      "params": {
+        "slope": 0.0,
+        "intercept": -0.0155,
+        "r_squared": 0.0113,
+        "p_value": 0.536689,
+        "std_error": 0.0
+      },
+      "formula": "price_volatility = 0.0000 * fx_rate + -0.0155"
+    },
+    {
+      "type": "linear",
+      "source": "demand",
+      "target": "loyalty",
+      "params": {
+        "slope": 0.7168,
+        "intercept": -15.2454,
+        "r_squared": 0.6927,
+        "p_value": 0.0,
+        "std_error": 0.0819
+      },
+      "formula": "loyalty = 0.7168 * demand + -15.2454"
+    },
+    {
+      "type": "linear",
+      "source": "price",
+      "target": "brand_equity",
+      "params": {
+        "slope": 0.1631,
+        "intercept": 27.1113,
+        "r_squared": 0.0811,
+        "p_value": 0.092219,
+        "std_error": 0.0941
+      },
+      "formula": "brand_equity = 0.1631 * price + 27.1113"
+    },
+    {
+      "type": "linear",
+      "source": "pass_through",
+      "target": "price",
+      "params": {
+        "slope": 50.8917,
+        "intercept": 99.3042,
+        "r_squared": 0.3864,
+        "p_value": 5.2e-05,
+        "std_error": 10.9993
+      },
+      "formula": "price = 50.8917 * pass_through + 99.3042"
+    },
+    {
+      "type": "linear",
+      "source": "service_level",
+      "target": "demand",
+      "params": {
+        "slope": 43.7786,
+        "intercept": 55.3634,
+        "r_squared": 0.2023,
+        "p_value": 0.005918,
+        "std_error": 14.9086
+      },
+      "formula": "demand = 43.7786 * service_level + 55.3634"
+    },
+    {
+      "type": "linear",
+      "source": "mkt_spend",
+      "target": "price",
+      "params": {
+        "slope": 0.2631,
+        "intercept": 96.6279,
+        "r_squared": 0.4131,
+        "p_value": 2.4e-05,
+        "std_error": 0.0538
+      },
+      "formula": "price = 0.2631 * mkt_spend + 96.6279"
+    },
+    {
+      "type": "linear",
+      "source": "service_level",
+      "target": "sales",
+      "params": {
+        "slope": 7318.0833,
+        "intercept": 5548.3821,
+        "r_squared": 0.4096,
+        "p_value": 2.6e-05,
+        "std_error": 1506.66
+      },
+      "formula": "sales = 7318.0833 * service_level + 5548.3821"
+    },
+    {
+      "type": "linear",
+      "source": "mkt_spend",
+      "target": "profit",
+      "params": {
+        "slope": 12.726,
+        "intercept": 181.3075,
+        "r_squared": 0.361,
+        "p_value": 0.000107,
+        "std_error": 2.9035
+      },
+      "formula": "profit = 12.7260 * mkt_spend + 181.3075"
+    },
+    {
+      "type": "linear",
+      "source": "fx_rate",
+      "target": "mkt_spend",
+      "params": {
+        "slope": 0.1946,
+        "intercept": -134.018,
+        "r_squared": 0.5241,
+        "p_value": 1e-06,
+        "std_error": 0.0318
+      },
+      "formula": "mkt_spend = 0.1946 * fx_rate + -134.0180"
+    },
+    {
+      "type": "linear",
+      "source": "mkt_spend",
+      "target": "margin",
+      "params": {
+        "slope": 0.0008,
+        "intercept": 0.0456,
+        "r_squared": 0.332,
+        "p_value": 0.000235,
+        "std_error": 0.0002
+      },
+      "formula": "margin = 0.0008 * mkt_spend + 0.0456"
+    },
+    {
+      "type": "linear",
+      "source": "service_level",
+      "target": "delivery_time",
+      "params": {
+        "slope": -5.8859,
+        "intercept": 7.4166,
+        "r_squared": 0.9845,
+        "p_value": 0.0,
+        "std_error": 0.1268
+      },
+      "formula": "delivery_time = -5.8859 * service_level + 7.4166"
+    },
+    {
+      "type": "linear",
+      "source": "fx_rate",
+      "target": "profit",
+      "params": {
+        "slope": 2.9841,
+        "intercept": -2169.1101,
+        "r_squared": 0.2747,
+        "p_value": 0.001035,
+        "std_error": 0.8316
+      },
+      "formula": "profit = 2.9841 * fx_rate + -2169.1101"
+    },
+    {
+      "type": "linear",
+      "source": "price",
+      "target": "loyalty",
+      "params": {
+        "slope": -0.3199,
+        "intercept": 90.3322,
+        "r_squared": 0.1454,
+        "p_value": 0.021765,
+        "std_error": 0.133
+      },
+      "formula": "loyalty = -0.3199 * price + 90.3322"
+    },
+    {
+      "type": "linear",
+      "source": "margin",
+      "target": "brand_equity",
+      "params": {
+        "slope": 102.55,
+        "intercept": 33.2587,
+        "r_squared": 0.4101,
+        "p_value": 2.6e-05,
+        "std_error": 21.0936
+      },
+      "formula": "brand_equity = 102.5500 * margin + 33.2587"
+    },
+    {
+      "type": "linear",
+      "source": "fx_rate",
+      "target": "pass_through",
+      "params": {
+        "slope": 0.0007,
+        "intercept": -0.3603,
+        "r_squared": 0.2736,
+        "p_value": 0.001063,
+        "std_error": 0.0002
+      },
+      "formula": "pass_through = 0.0007 * fx_rate + -0.3603"
+    },
+    {
+      "type": "linear",
+      "source": "cogs",
+      "target": "demand",
+      "params": {
+        "slope": -0.8093,
+        "intercept": 178.7065,
+        "r_squared": 0.3262,
+        "p_value": 0.000275,
+        "std_error": 0.1995
+      },
+      "formula": "demand = -0.8093 * cogs + 178.7065"
+    },
+    {
+      "type": "linear",
+      "source": "cogs",
+      "target": "margin",
+      "params": {
+        "slope": 0.0005,
+        "intercept": 0.083,
+        "r_squared": 0.0106,
+        "p_value": 0.550105,
+        "std_error": 0.0009
+      },
+      "formula": "margin = 0.0005 * cogs + 0.0830"
+    },
+    {
+      "type": "linear",
+      "source": "sales",
+      "target": "brand_equity",
+      "params": {
+        "slope": 0.0041,
+        "intercept": 0.3754,
+        "r_squared": 0.6797,
+        "p_value": 0.0,
+        "std_error": 0.0005
+      },
+      "formula": "brand_equity = 0.0041 * sales + 0.3754"
+    },
+    {
+      "type": "linear",
+      "source": "sales",
+      "target": "margin",
+      "params": {
+        "slope": 0.0,
+        "intercept": -0.0412,
+        "r_squared": 0.2585,
+        "p_value": 0.001544,
+        "std_error": 0.0
+      },
+      "formula": "margin = 0.0000 * sales + -0.0412"
+    },
+    {
+      "type": "linear",
+      "source": "margin",
+      "target": "loyalty",
+      "params": {
+        "slope": -13.4564,
+        "intercept": 51.782,
+        "r_squared": 0.0033,
+        "p_value": 0.739745,
+        "std_error": 40.1783
+      },
+      "formula": "loyalty = -13.4564 * margin + 51.7820"
+    },
+    {
+      "type": "linear",
+      "source": "pass_through",
+      "target": "mkt_spend",
+      "params": {
+        "slope": 100.0,
+        "intercept": 60.0,
+        "r_squared": 0.25,
+        "p_value": 0.001902,
+        "std_error": 29.7044
+      },
+      "formula": "mkt_spend = 100.0000 * pass_through + 60.0000"
+    },
+    {
+      "type": "linear",
+      "source": "pass_through",
+      "target": "margin",
+      "params": {
+        "slope": 0.279,
+        "intercept": -0.0076,
+        "r_squared": 0.9082,
+        "p_value": 0.0,
+        "std_error": 0.0152
+      },
+      "formula": "margin = 0.2790 * pass_through + -0.0076"
+    },
+    {
+      "type": "linear",
+      "source": "sales",
+      "target": "csat",
+      "params": {
+        "slope": 0.0,
+        "intercept": 0.1777,
+        "r_squared": 0.4506,
+        "p_value": 7e-06,
+        "std_error": 0.0
+      },
+      "formula": "csat = 0.0000 * sales + 0.1777"
+    },
+    {
+      "type": "linear",
+      "source": "delivery_time",
+      "target": "demand",
+      "params": {
+        "slope": -8.326,
+        "intercept": 112.8758,
+        "r_squared": 0.2575,
+        "p_value": 0.001583,
+        "std_error": 2.4246
+      },
+      "formula": "demand = -8.3260 * delivery_time + 112.8758"
+    },
+    {
+      "type": "linear",
+      "source": "refund_rate",
+      "target": "delivery_time",
+      "params": {
+        "slope": 30.7786,
+        "intercept": 0.9142,
+        "r_squared": 0.98,
+        "p_value": 0.0,
+        "std_error": 0.7542
+      },
+      "formula": "delivery_time = 30.7786 * refund_rate + 0.9142"
+    },
+    {
+      "type": "linear",
+      "source": "delivery_time",
+      "target": "brand_equity",
+      "params": {
+        "slope": -3.0159,
+        "intercept": 55.7076,
+        "r_squared": 0.0978,
+        "p_value": 0.063278,
+        "std_error": 1.5708
+      },
+      "formula": "brand_equity = -3.0159 * delivery_time + 55.7076"
+    },
+    {
+      "type": "linear",
+      "source": "profit",
+      "target": "csat",
+      "params": {
+        "slope": 0.0,
+        "intercept": 0.6006,
+        "r_squared": 0.104,
+        "p_value": 0.055038,
+        "std_error": 0.0
+      },
+      "formula": "csat = 0.0000 * profit + 0.6006"
+    },
+    {
+      "type": "linear",
+      "source": "refund_rate",
+      "target": "demand",
+      "params": {
+        "slope": -222.3353,
+        "intercept": 103.357,
+        "r_squared": 0.19,
+        "p_value": 0.007882,
+        "std_error": 78.739
+      },
+      "formula": "demand = -222.3353 * refund_rate + 103.3570"
+    },
+    {
+      "type": "linear",
+      "source": "refund_rate",
+      "target": "brand_equity",
+      "params": {
+        "slope": -86.0133,
+        "intercept": 52.5676,
+        "r_squared": 0.0823,
+        "p_value": 0.089795,
+        "std_error": 49.2554
+      },
+      "formula": "brand_equity = -86.0133 * refund_rate + 52.5676"
+    },
+    {
+      "type": "linear",
+      "source": "csat",
+      "target": "demand",
+      "params": {
+        "slope": 67.0895,
+        "intercept": 45.5471,
+        "r_squared": 0.259,
+        "p_value": 0.001527,
+        "std_error": 19.4622
+      },
+      "formula": "demand = 67.0895 * csat + 45.5471"
+    },
+    {
+      "type": "linear",
+      "source": "demand",
+      "target": "profit",
+      "params": {
+        "slope": 11.4027,
+        "intercept": 587.5525,
+        "r_squared": 0.0461,
+        "p_value": 0.20858,
+        "std_error": 8.8958
+      },
+      "formula": "profit = 11.4027 * demand + 587.5525"
+    },
+    {
+      "type": "linear",
+      "source": "cogs",
+      "target": "sales",
+      "params": {
+        "slope": 14.3808,
+        "intercept": 9920.6711,
+        "r_squared": 0.0075,
+        "p_value": 0.616371,
+        "std_error": 28.4407
+      },
+      "formula": "sales = 14.3808 * cogs + 9920.6711"
+    },
+    {
+      "type": "linear",
+      "source": "pass_through",
+      "target": "loyalty",
+      "params": {
+        "slope": 4.5833,
+        "intercept": 47.4383,
+        "r_squared": 0.0045,
+        "p_value": 0.699019,
+        "std_error": 11.7542
+      },
+      "formula": "loyalty = 4.5833 * pass_through + 47.4383"
+    },
+    {
+      "type": "linear",
+      "source": "margin",
+      "target": "price_volatility",
+      "params": {
+        "slope": -0.1088,
+        "intercept": 0.0307,
+        "r_squared": 0.0352,
+        "p_value": 0.273491,
+        "std_error": 0.0977
+      },
+      "formula": "price_volatility = -0.1088 * margin + 0.0307"
+    },
+    {
+      "type": "linear",
+      "source": "pass_through",
+      "target": "cogs",
+      "params": {
+        "slope": 7.9083,
+        "intercept": 104.3333,
+        "r_squared": 0.0197,
+        "p_value": 0.413754,
+        "std_error": 9.5575
+      },
+      "formula": "cogs = 7.9083 * pass_through + 104.3333"
+    },
+    {
+      "type": "linear",
+      "source": "price",
+      "target": "profit",
+      "params": {
+        "slope": 31.2268,
+        "intercept": -2324.9337,
+        "r_squared": 0.3643,
+        "p_value": 9.7e-05,
+        "std_error": 7.0745
+      },
+      "formula": "profit = 31.2268 * price + -2324.9337"
+    },
+    {
+      "type": "linear",
+      "source": "demand",
+      "target": "refund_rate",
+      "params": {
+        "slope": -0.0009,
+        "intercept": 0.1338,
+        "r_squared": 0.19,
+        "p_value": 0.007882,
+        "std_error": 0.0003
+      },
+      "formula": "refund_rate = -0.0009 * demand + 0.1338"
+    },
+    {
+      "type": "linear",
+      "source": "mkt_spend",
+      "target": "cogs",
+      "params": {
+        "slope": 0.1202,
+        "intercept": 94.9275,
+        "r_squared": 0.1824,
+        "p_value": 0.009375,
+        "std_error": 0.0436
+      },
+      "formula": "cogs = 0.1202 * mkt_spend + 94.9275"
+    },
+    {
+      "type": "linear",
+      "source": "pass_through",
+      "target": "profit",
+      "params": {
+        "slope": 3984.2583,
+        "intercept": -501.355,
+        "r_squared": 0.8847,
+        "p_value": 0.0,
+        "std_error": 246.6892
+      },
+      "formula": "profit = 3984.2583 * pass_through + -501.3550"
+    },
+    {
+      "type": "linear",
+      "source": "service_level",
+      "target": "refund_rate",
+      "params": {
+        "slope": -0.1901,
+        "intercept": 0.2103,
+        "r_squared": 0.9922,
+        "p_value": 0.0,
+        "std_error": 0.0029
+      },
+      "formula": "refund_rate = -0.1901 * service_level + 0.2103"
+    },
+    {
+      "type": "linear",
+      "source": "service_level",
+      "target": "brand_equity",
+      "params": {
+        "slope": 16.2486,
+        "intercept": 34.5582,
+        "r_squared": 0.0807,
+        "p_value": 0.093169,
+        "std_error": 9.4063
+      },
+      "formula": "brand_equity = 16.2486 * service_level + 34.5582"
+    },
+    {
+      "type": "linear",
+      "source": "csat",
+      "target": "brand_equity",
+      "params": {
+        "slope": 24.7021,
+        "intercept": 31.0489,
+        "r_squared": 0.1016,
+        "p_value": 0.058064,
+        "std_error": 12.5942
+      },
+      "formula": "brand_equity = 24.7021 * csat + 31.0489"
+    },
+    {
+      "type": "linear",
+      "source": "mkt_spend",
+      "target": "price_volatility",
+      "params": {
+        "slope": -0.0001,
+        "intercept": 0.0252,
+        "r_squared": 0.0104,
+        "p_value": 0.554589,
+        "std_error": 0.0001
+      },
+      "formula": "price_volatility = -0.0001 * mkt_spend + 0.0252"
+    },
+    {
+      "type": "linear",
+      "source": "mkt_spend",
+      "target": "fx_rate",
+      "params": {
+        "slope": 2.6931,
+        "intercept": 965.7362,
+        "r_squared": 0.5241,
+        "p_value": 1e-06,
+        "std_error": 0.4401
+      },
+      "formula": "fx_rate = 2.6931 * mkt_spend + 965.7362"
+    },
+    {
+      "type": "linear",
+      "source": "profit",
+      "target": "delivery_time",
+      "params": {
+        "slope": -0.0004,
+        "intercept": 3.2847,
+        "r_squared": 0.1181,
+        "p_value": 0.040179,
+        "std_error": 0.0002
+      },
+      "formula": "delivery_time = -0.0004 * profit + 3.2847"
+    },
+    {
+      "type": "linear",
+      "source": "cogs",
+      "target": "csat",
+      "params": {
+        "slope": 0.001,
+        "intercept": 0.5646,
+        "r_squared": 0.009,
+        "p_value": 0.581893,
+        "std_error": 0.0018
+      },
+      "formula": "csat = 0.0010 * cogs + 0.5646"
+    },
+    {
+      "type": "linear",
+      "source": "demand",
+      "target": "csat",
+      "params": {
+        "slope": 0.0039,
+        "intercept": 0.3246,
+        "r_squared": 0.259,
+        "p_value": 0.001527,
+        "std_error": 0.0011
+      },
+      "formula": "csat = 0.0039 * demand + 0.3246"
+    },
+    {
+      "type": "linear",
+      "source": "sales",
+      "target": "refund_rate",
+      "params": {
+        "slope": -0.0,
+        "intercept": 0.1786,
+        "r_squared": 0.408,
+        "p_value": 2.8e-05,
+        "std_error": 0.0
+      },
+      "formula": "refund_rate = -0.0000 * sales + 0.1786"
+    },
+    {
+      "type": "linear",
+      "source": "pass_through",
+      "target": "brand_equity",
+      "params": {
+        "slope": 30.9167,
+        "intercept": 31.2433,
+        "r_squared": 0.435,
+        "p_value": 1.2e-05,
+        "std_error": 6.0428
+      },
+      "formula": "brand_equity = 30.9167 * pass_through + 31.2433"
+    },
+    {
+      "type": "linear",
+      "source": "pass_through",
+      "target": "price_volatility",
+      "params": {
+        "slope": -0.0212,
+        "intercept": 0.0267,
+        "r_squared": 0.0156,
+        "p_value": 0.468023,
+        "std_error": 0.0289
+      },
+      "formula": "price_volatility = -0.0212 * pass_through + 0.0267"
+    },
+    {
+      "type": "linear",
+      "source": "cogs",
+      "target": "profit",
+      "params": {
+        "slope": 8.4837,
+        "intercept": 702.6721,
+        "r_squared": 0.0127,
+        "p_value": 0.512719,
+        "std_error": 12.8239
+      },
+      "formula": "profit = 8.4837 * cogs + 702.6721"
+    },
+    {
+      "type": "linear",
+      "source": "cogs",
+      "target": "brand_equity",
+      "params": {
+        "slope": -0.0599,
+        "intercept": 54.238,
+        "r_squared": 0.0052,
+        "p_value": 0.676605,
+        "std_error": 0.1425
+      },
+      "formula": "brand_equity = -0.0599 * cogs + 54.2380"
+    },
+    {
+      "type": "linear",
+      "source": "demand",
+      "target": "sales",
+      "params": {
+        "slope": 80.8335,
+        "intercept": 4137.3475,
+        "r_squared": 0.4735,
+        "p_value": 4e-06,
+        "std_error": 14.6186
+      },
+      "formula": "sales = 80.8335 * demand + 4137.3475"
+    },
+    {
+      "type": "linear",
+      "source": "fx_rate",
+      "target": "demand",
+      "params": {
+        "slope": -0.0465,
+        "intercept": 149.9915,
+        "r_squared": 0.1884,
+        "p_value": 0.00818,
+        "std_error": 0.0166
+      },
+      "formula": "demand = -0.0465 * fx_rate + 149.9915"
+    },
+    {
+      "type": "linear",
+      "source": "pass_through",
+      "target": "sales",
+      "params": {
+        "slope": 5184.6042,
+        "intercept": 8716.5992,
+        "r_squared": 0.3062,
+        "p_value": 0.000464,
+        "std_error": 1338.4463
+      },
+      "formula": "sales = 5184.6042 * pass_through + 8716.5992"
+    },
+    {
+      "type": "linear",
+      "source": "profit",
+      "target": "price_volatility",
+      "params": {
+        "slope": -0.0,
+        "intercept": 0.0292,
+        "r_squared": 0.0449,
+        "p_value": 0.214757,
+        "std_error": 0.0
+      },
+      "formula": "price_volatility = -0.0000 * profit + 0.0292"
+    },
+    {
+      "type": "linear",
+      "source": "mkt_spend",
+      "target": "sales",
+      "params": {
+        "slope": 20.9644,
+        "intercept": 9105.7613,
+        "r_squared": 0.2003,
+        "p_value": 0.006208,
+        "std_error": 7.185
+      },
+      "formula": "sales = 20.9644 * mkt_spend + 9105.7613"
+    },
+    {
+      "type": "linear",
+      "source": "price",
+      "target": "demand",
+      "params": {
+        "slope": -0.4335,
+        "intercept": 145.6672,
+        "r_squared": 0.198,
+        "p_value": 0.006545,
+        "std_error": 0.1496
+      },
+      "formula": "demand = -0.4335 * price + 145.6672"
+    },
+    {
+      "type": "linear",
+      "source": "loyalty",
+      "target": "profit",
+      "params": {
+        "slope": 7.3669,
+        "intercept": 1256.1014,
+        "r_squared": 0.0143,
+        "p_value": 0.4877,
+        "std_error": 10.5
+      },
+      "formula": "profit = 7.3669 * loyalty + 1256.1014"
+    }
+  ]
+}

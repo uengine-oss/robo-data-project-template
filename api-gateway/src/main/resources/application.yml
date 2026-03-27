@@ -1,0 +1,348 @@
+server:
+  port: 9000
+
+spring:
+  application:
+    name: api-gateway
+  # 대용량 PDF 온톨로지 요청 허용 (base64 body)
+  codec:
+    max-in-memory-size: 1024MB
+  
+  cloud:
+    gateway:
+      # HTTP Client Configuration (타임아웃 설정)
+      httpclient:
+        connect-timeout: 5000
+        response-timeout: 30s
+      
+      # Global CORS Configuration
+      globalcors:
+        cors-configurations:
+          '[/**]':
+            allowedOriginPatterns:
+              - "http://localhost:[*]"
+              - "http://127.0.0.1:[*]"
+              - "https://*.ngrok-free.app"   # ngrok 터널링
+            allowedMethods:
+              - GET
+              - POST
+              - PUT
+              - DELETE
+              - PATCH
+              - OPTIONS
+            allowedHeaders: "*"
+            exposedHeaders:
+              - Content-Disposition
+              - Content-Type
+            allowCredentials: true
+            maxAge: 3600
+      
+      # Route Configuration
+      routes:
+        # ============================================
+        # API Gateway Prefix Routes (/api/gateway/**)
+        # 프론트엔드에서 /api/gateway/antlr/** 형태로 요청 시 처리
+        # ============================================
+        - id: api-gateway-antlr
+          uri: http://127.0.0.1:8081
+          predicates:
+            - Path=/api/gateway/antlr/**
+          filters:
+            - RewritePath=/api/gateway/antlr/(?<segment>.*), /antlr/$\{segment}
+            - RemoveRequestHeader=Origin
+        
+        - id: api-gateway-robo
+          uri: http://127.0.0.1:5502
+          predicates:
+            - Path=/api/gateway/robo/**
+          filters:
+            - RewritePath=/api/gateway/robo/(?<segment>.*), /robo/$\{segment}
+            - RemoveRequestHeader=Origin
+        
+        - id: api-gateway-text2sql
+          uri: http://127.0.0.1:8000
+          predicates:
+            - Path=/api/gateway/text2sql/**
+          filters:
+            - RewritePath=/api/gateway(?<segment>.*), $\{segment}
+            - RemoveRequestHeader=Origin
+        
+        - id: api-gateway-olap
+          uri: http://127.0.0.1:8002
+          predicates:
+            - Path=/api/gateway/olap/**
+          filters:
+            - RewritePath=/api/gateway/olap/(?<segment>.*), /$\{segment}
+            - RemoveRequestHeader=Origin
+        
+        - id: api-gateway-architect
+          uri: http://127.0.0.1:8001
+          predicates:
+            - Path=/api/gateway/architect/**
+          filters:
+            - RewritePath=/api/gateway/architect/(?<segment>.*), /$\{segment}
+            - RemoveRequestHeader=Origin
+        
+        - id: api-gateway-langchain
+          uri: http://127.0.0.1:8001
+          predicates:
+            - Path=/api/gateway/langchain/**
+          filters:
+            - RewritePath=/api/gateway/langchain/(?<segment>.*), /$\{segment}
+            - RemoveRequestHeader=Origin
+        
+        - id: api-gateway-agent-scheduler
+          uri: http://127.0.0.1:8089
+          predicates:
+            - Path=/api/gateway/agent-scheduler/**
+          filters:
+            - RewritePath=/api/gateway/agent-scheduler/(?<segment>.*), /$\{segment}
+            - RemoveRequestHeader=Origin
+        
+        # Node-Local Agent Scheduler (port 8091)
+        - id: api-gateway-node-agent-scheduler
+          uri: http://127.0.0.1:8091
+          predicates:
+            - Path=/api/gateway/node-agent-scheduler/**
+          filters:
+            - RewritePath=/api/gateway/node-agent-scheduler/(?<segment>.*), /$\{segment}
+            - RemoveRequestHeader=Origin
+        
+        - id: api-gateway-ontology
+          uri: http://127.0.0.1:8002
+          predicates:
+            - Path=/api/gateway/ontology/**
+          filters:
+            - RewritePath=/api/gateway/ontology/(?<segment>.*), /ontology/$\{segment}
+            - RemoveRequestHeader=Origin
+          metadata:
+            connect-timeout: 5000
+            response-timeout: 600000
+        
+        # Domain Layer What-if Simulation API
+        - id: api-gateway-domain-whatif
+          uri: http://127.0.0.1:8002
+          predicates:
+            - Path=/api/gateway/domain-whatif/**
+          filters:
+            - RewritePath=/api/gateway/domain-whatif/(?<segment>.*), /whatif/$\{segment}
+            - RemoveRequestHeader=Origin
+          metadata:
+            connect-timeout: 5000
+            response-timeout: 600000
+        
+        # Direct /api/ontology route (for frontend)
+        - id: ontology-api-direct
+          uri: http://127.0.0.1:8002
+          predicates:
+            - Path=/api/ontology/**
+          filters:
+            - RewritePath=/api/ontology/(?<segment>.*), /ontology/$\{segment}
+            - RemoveRequestHeader=Origin
+          metadata:
+            connect-timeout: 5000
+            response-timeout: 600000
+        
+        - id: api-gateway-data-fabric
+          uri: http://127.0.0.1:8004
+          predicates:
+            - Path=/api/gateway/data-fabric/**
+          filters:
+            - RewritePath=/api/gateway/data-fabric/(?<segment>.*), /$\{segment}
+            - RemoveRequestHeader=Origin
+        
+        - id: api-gateway-whatif
+          uri: http://127.0.0.1:8005
+          predicates:
+            - Path=/api/gateway/whatif/**
+          filters:
+            - RewritePath=/api/gateway/whatif/(?<segment>.*), /api/$\{segment}
+            - RemoveRequestHeader=Origin
+        
+        # ============================================
+        # Data Secure Guard Service (FastAPI) - Port 8006
+        # RBAC based security management API
+        # ============================================
+        - id: api-gateway-security
+          uri: http://127.0.0.1:8006
+          predicates:
+            - Path=/api/gateway/security/**
+          filters:
+            - RewritePath=/api/gateway/security/(?<segment>.*), /api/security/$\{segment}
+            - RemoveRequestHeader=Origin
+        
+        - id: security-api-direct
+          uri: http://127.0.0.1:8006
+          predicates:
+            - Path=/api/security/**
+          filters:
+            - RemoveRequestHeader=Origin
+        
+        # ============================================
+        # Direct API Routes (기존 경로 유지)
+        # ============================================
+        
+        # ANTLR Parser Service (Spring Boot) - Port 8081
+        - id: antlr-service
+          uri: http://127.0.0.1:8081
+          predicates:
+            - Path=/antlr/**
+          filters:
+            - RemoveRequestHeader=Origin
+        
+        # ROBO Analyzer Service (FastAPI) - Port 5502
+        - id: robo-analyzer-service
+          uri: http://127.0.0.1:5502
+          predicates:
+            - Path=/robo/**
+          filters:
+            - RemoveRequestHeader=Origin
+        
+        # Text2SQL Service (FastAPI) - Port 8000
+        - id: text2sql-service
+          uri: http://127.0.0.1:8000
+          predicates:
+            - Path=/text2sql/**
+          filters:
+            - RemoveRequestHeader=Origin
+        
+        # ============================================
+        # Data Platform OLAP Service (FastAPI) - Port 8002
+        # ============================================
+        - id: olap-service
+          uri: http://127.0.0.1:8002
+          predicates:
+            - Path=/olap/**
+          filters:
+            - RewritePath=/olap/(?<segment>.*), /$\{segment}
+            - RemoveRequestHeader=Origin
+        
+        # ============================================
+        # ROBO Architect Service (FastAPI) - Port 8001
+        # ============================================
+        - id: architect-service
+          uri: http://127.0.0.1:8001
+          predicates:
+            - Path=/architect/**
+          filters:
+            - RewritePath=/architect/(?<segment>.*), /$\{segment}
+            - RemoveRequestHeader=Origin
+        
+        # ============================================
+        # LangChain Text2SQL Service (FastAPI) - Port 8001
+        # ============================================
+        - id: langchain-service
+          uri: http://127.0.0.1:8001
+          predicates:
+            - Path=/langchain/**
+          filters:
+            - RewritePath=/langchain/(?<segment>.*), /$\{segment}
+            - RemoveRequestHeader=Origin
+        
+        # ============================================
+        # Agent Scheduler Service (FastAPI) - Port 8089
+        # ============================================
+        - id: agent-scheduler-service
+          uri: http://127.0.0.1:8089
+          predicates:
+            - Path=/agent-scheduler/**
+          filters:
+            - RewritePath=/agent-scheduler/(?<segment>.*), /$\{segment}
+            - RemoveRequestHeader=Origin
+        
+        # ============================================
+        # Node-Local Agent Scheduler Service (FastAPI) - Port 8091
+        # ============================================
+        - id: node-agent-scheduler-service
+          uri: http://127.0.0.1:8091
+          predicates:
+            - Path=/node-agent-scheduler/**
+          filters:
+            - RewritePath=/node-agent-scheduler/(?<segment>.*), /$\{segment}
+            - RemoveRequestHeader=Origin
+        
+        # ============================================
+        # Domain Layer Service (FastAPI) - Port 8002
+        # Ontology schema generation and management
+        # ============================================
+        - id: ontology-service
+          uri: http://127.0.0.1:8002
+          predicates:
+            - Path=/ontology/**
+          filters:
+            - RemoveRequestHeader=Origin
+        
+        # ============================================
+        # Risk Calculator Service (FastAPI) - Port 8003
+        # ObjectType Behavior execution service
+        # ============================================
+        - id: api-gateway-risk-calculator
+          uri: http://127.0.0.1:8003
+          predicates:
+            - Path=/api/gateway/risk-calculator/**
+          filters:
+            - RewritePath=/api/gateway/risk-calculator/(?<segment>.*), /$\{segment}
+            - RemoveRequestHeader=Origin
+        
+        - id: risk-calculator-service
+          uri: http://127.0.0.1:8003
+          predicates:
+            - Path=/risk-calculator/**
+          filters:
+            - RewritePath=/risk-calculator/(?<segment>.*), /$\{segment}
+            - RemoveRequestHeader=Origin
+        
+        # ============================================
+        # Data Fabric Service (FastAPI) - Port 8004
+        # DataSource management and MindsDB integration
+        # ============================================
+        - id: data-fabric-service
+          uri: http://127.0.0.1:8004
+          predicates:
+            - Path=/data-fabric/**
+          filters:
+            - RewritePath=/data-fabric/(?<segment>.*), /$\{segment}
+            - RemoveRequestHeader=Origin
+        
+        # ============================================
+        # What-If Simulator Service (FastAPI) - Port 8005
+        # Causal Discovery and What-If Simulation
+        # ============================================
+        - id: whatif-service
+          uri: http://127.0.0.1:8005
+          predicates:
+            - Path=/whatif/**
+          filters:
+            - RewritePath=/whatif/(?<segment>.*), /api/$\{segment}
+            - RemoveRequestHeader=Origin
+        
+        # ============================================
+        # Frontend (Vue3) - Port 3000
+        # 모든 나머지 요청은 프론트엔드로 라우팅 (맨 마지막에 위치해야 함)
+        # Vite 개발 서버가 IPv6(::1)로 바인딩되므로 localhost 사용
+        # ============================================
+        - id: frontend
+          uri: http://localhost:3000
+          predicates:
+            - Path=/**
+          filters:
+            - RemoveRequestHeader=Origin
+
+# Actuator endpoints for health check
+management:
+  endpoints:
+    web:
+      exposure:
+        include: health,info,gateway
+  endpoint:
+    health:
+      show-details: always
+    gateway:
+      enabled: true
+
+# Logging
+logging:
+  level:
+    org.springframework.cloud.gateway: DEBUG
+    reactor.netty: INFO
+

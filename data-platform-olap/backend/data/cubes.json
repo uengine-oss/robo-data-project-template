@@ -1,0 +1,237 @@
+{
+  "schema_name": "water_quality_analysisSchema",
+  "cubes": {
+    "turbidity_analysis": {
+      "name": "turbidity_analysis",
+      "fact_table": "fact_turbidity",
+      "measures": [
+        {
+          "name": "avg_turbidity",
+          "column": "avg_turbidity",
+          "agg": "AVG",
+          "format_string": null,
+          "caption": null
+        },
+        {
+          "name": "max_turbidity",
+          "column": "max_turbidity",
+          "agg": "MAX",
+          "format_string": null,
+          "caption": null
+        },
+        {
+          "name": "min_turbidity",
+          "column": "min_turbidity",
+          "agg": "MIN",
+          "format_string": null,
+          "caption": null
+        },
+        {
+          "name": "total_measurements",
+          "column": "total_measurements",
+          "agg": "COUNT",
+          "format_string": null,
+          "caption": null
+        }
+      ],
+      "dimensions": [
+        {
+          "name": "dim_time",
+          "table": "dim_time",
+          "foreign_key": "dim_time_id",
+          "levels": [
+            {
+              "name": "date",
+              "column": "date",
+              "order_column": null,
+              "caption": null
+            },
+            {
+              "name": "year",
+              "column": "year",
+              "order_column": null,
+              "caption": null
+            },
+            {
+              "name": "quarter",
+              "column": "quarter",
+              "order_column": null,
+              "caption": null
+            },
+            {
+              "name": "month",
+              "column": "month",
+              "order_column": null,
+              "caption": null
+            },
+            {
+              "name": "day",
+              "column": "day",
+              "order_column": null,
+              "caption": null
+            }
+          ],
+          "caption": null
+        },
+        {
+          "name": "dim_site",
+          "table": "dim_site",
+          "foreign_key": "dim_site_id",
+          "levels": [
+            {
+              "name": "name",
+              "column": "name",
+              "order_column": null,
+              "caption": null
+            }
+          ],
+          "caption": null
+        },
+        {
+          "name": "dim_tag",
+          "table": "dim_tag",
+          "foreign_key": "dim_tag_id",
+          "levels": [
+            {
+              "name": "description",
+              "column": "description",
+              "order_column": null,
+              "caption": null
+            }
+          ],
+          "caption": null
+        }
+      ],
+      "joins": [
+        {
+          "left_table": "fact_turbidity",
+          "left_key": "dim_time_id",
+          "right_table": "dim_time",
+          "right_key": "id"
+        },
+        {
+          "left_table": "fact_turbidity",
+          "left_key": "dim_site_id",
+          "right_table": "dim_site",
+          "right_key": "id"
+        },
+        {
+          "left_table": "fact_turbidity",
+          "left_key": "dim_tag_id",
+          "right_table": "dim_tag",
+          "right_key": "id"
+        }
+      ],
+      "caption": null
+    },
+    "water_quality_analysis": {
+      "name": "water_quality_analysis",
+      "fact_table": "fact_turbidity",
+      "measures": [
+        {
+          "name": "avg_turbidity",
+          "column": "avg_turbidity",
+          "agg": "AVG",
+          "format_string": null,
+          "caption": null
+        },
+        {
+          "name": "max_turbidity",
+          "column": "max_turbidity",
+          "agg": "MAX",
+          "format_string": null,
+          "caption": null
+        },
+        {
+          "name": "min_turbidity",
+          "column": "min_turbidity",
+          "agg": "MIN",
+          "format_string": null,
+          "caption": null
+        },
+        {
+          "name": "total_count",
+          "column": "total_count",
+          "agg": "COUNT",
+          "format_string": null,
+          "caption": null
+        }
+      ],
+      "dimensions": [
+        {
+          "name": "dim_time",
+          "table": "dim_time",
+          "foreign_key": "dim_time_id",
+          "levels": [
+            {
+              "name": "date",
+              "column": "date",
+              "order_column": null,
+              "caption": null
+            },
+            {
+              "name": "year",
+              "column": "year",
+              "order_column": null,
+              "caption": null
+            },
+            {
+              "name": "month",
+              "column": "month",
+              "order_column": null,
+              "caption": null
+            },
+            {
+              "name": "day",
+              "column": "day",
+              "order_column": null,
+              "caption": null
+            },
+            {
+              "name": "hour",
+              "column": "hour",
+              "order_column": null,
+              "caption": null
+            }
+          ],
+          "caption": null
+        },
+        {
+          "name": "dim_site",
+          "table": "dim_site",
+          "foreign_key": "dim_site_id",
+          "levels": [
+            {
+              "name": "site_name",
+              "column": "site_name",
+              "order_column": null,
+              "caption": null
+            },
+            {
+              "name": "filter_name",
+              "column": "filter_name",
+              "order_column": null,
+              "caption": null
+            }
+          ],
+          "caption": null
+        }
+      ],
+      "joins": [
+        {
+          "left_table": "fact_turbidity",
+          "left_key": "dim_time_id",
+          "right_table": "dim_time",
+          "right_key": "id"
+        },
+        {
+          "left_table": "fact_turbidity",
+          "left_key": "dim_site_id",
+          "right_table": "dim_site",
+          "right_key": "id"
+        }
+      ],
+      "caption": null
+    }
+  }
+}

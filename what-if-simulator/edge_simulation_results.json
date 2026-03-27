@@ -1,0 +1,117 @@
+{
+  "timestamp": "2026-01-24T11:37:23.123797",
+  "scenarios": {
+    "Baseline": {
+      "kpis": {
+        "SHORT_TERM_MARGIN": 0.13043478260869565,
+        "LONG_TERM_BRAND_VALUE": 13.692291822911105,
+        "TOTAL_PROFIT": 12048.408273990084,
+        "AVG_DEMAND": 64.67207876537891
+      },
+      "final_states": {
+        "FX_RATE": 1270.0,
+        "PASS_THROUGH": 0.5,
+        "MKT_SPEND": 100.0,
+        "SERVICE_LEVEL": 0.8,
+        "COGS": 103.5,
+        "PRICE": 119.02499999999999,
+        "PRICE_VOLATILITY": 0.0,
+        "DEMAND": 50,
+        "SALES": 5951.25,
+        "PROFIT": 776.25,
+        "MARGIN": 0.13043478260869565,
+        "REFUND_RATE": 0.065,
+        "DELIVERY_TIME": 1.7999999999999998,
+        "CSAT": 0.7475,
+        "BRAND_EQUITY": 22.82048637151851,
+        "LOYALTY": 0,
+        "SHORT_TERM_MARGIN": 0,
+        "LONG_TERM_BRAND_VALUE": 0
+      }
+    },
+    "FX_Shock": {
+      "kpis": {
+        "SHORT_TERM_MARGIN": 0.13043478260869565,
+        "LONG_TERM_BRAND_VALUE": 10.797256215884557,
+        "TOTAL_PROFIT": 12070.58680647457,
+        "AVG_DEMAND": 62.62739829930974
+      },
+      "final_states": {
+        "FX_RATE": 1380.0,
+        "PASS_THROUGH": 0.5,
+        "MKT_SPEND": 100.0,
+        "SERVICE_LEVEL": 0.8,
+        "COGS": 109.0,
+        "PRICE": 125.35,
+        "PRICE_VOLATILITY": 0.0,
+        "DEMAND": 50,
+        "SALES": 6267.5,
+        "PROFIT": 817.5,
+        "MARGIN": 0.13043478260869565,
+        "REFUND_RATE": 0.065,
+        "DELIVERY_TIME": 1.7999999999999998,
+        "CSAT": 0.7475,
+        "BRAND_EQUITY": 17.995427026474264,
+        "LOYALTY": 0,
+        "SHORT_TERM_MARGIN": 0,
+        "LONG_TERM_BRAND_VALUE": 0
+      }
+    },
+    "FX_Shock_HighPassThrough": {
+      "kpis": {
+        "SHORT_TERM_MARGIN": 0.19354838709677416,
+        "LONG_TERM_BRAND_VALUE": 10.797256215884563,
+        "TOTAL_PROFIT": 18438.69646786716,
+        "AVG_DEMAND": 59.76073410941374
+      },
+      "final_states": {
+        "FX_RATE": 1380.0,
+        "PASS_THROUGH": 0.8,
+        "MKT_SPEND": 100.0,
+        "SERVICE_LEVEL": 0.8,
+        "COGS": 109.0,
+        "PRICE": 135.16,
+        "PRICE_VOLATILITY": 0.0,
+        "DEMAND": 50,
+        "SALES": 6758.0,
+        "PROFIT": 1308.0,
+        "MARGIN": 0.1935483870967742,
+        "REFUND_RATE": 0.065,
+        "DELIVERY_TIME": 1.7999999999999998,
+        "CSAT": 0.7475,
+        "BRAND_EQUITY": 17.99542702647427,
+        "LOYALTY": 0,
+        "SHORT_TERM_MARGIN": 0,
+        "LONG_TERM_BRAND_VALUE": 0
+      }
+    },
+    "FX_Shock_MarketingBoost": {
+      "kpis": {
+        "SHORT_TERM_MARGIN": 0.13043478260869562,
+        "LONG_TERM_BRAND_VALUE": 39.26806898919078,
+        "TOTAL_PROFIT": 15816.644798426762,
+        "AVG_DEMAND": 81.81931984340859
+      },
+      "final_states": {
+        "FX_RATE": 1380.0,
+        "PASS_THROUGH": 0.5,
+        "MKT_SPEND": 150.0,
+        "SERVICE_LEVEL": 0.8,
+        "COGS": 109.0,
+        "PRICE": 125.35,
+        "PRICE_VOLATILITY": 0.0,
+        "DEMAND": 67.22794896057614,
+        "SALES": 8427.023402208219,
+        "PROFIT": 1099.1769655054195,
+        "MARGIN": 0.13043478260869562,
+        "REFUND_RATE": 0.065,
+        "DELIVERY_TIME": 1.7999999999999998,
+        "CSAT": 0.7475,
+        "BRAND_EQUITY": 44.90583655962426,
+        "LOYALTY": 30.811417633540557,
+        "SHORT_TERM_MARGIN": 0,
+        "LONG_TERM_BRAND_VALUE": 0
+      }
+    }
+  }
+}

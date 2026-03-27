@@ -1,0 +1,1947 @@
+{
+  "validated_at": "2026-01-24T12:38:58.398839",
+  "summary": {
+    "total_functions": 83,
+    "valid_functions": 18,
+    "mean_r_squared": -9.354718551348965,
+    "mean_test_r_squared": -516.7833018340422,
+    "overfit_cases": 63
+  },
+  "function_results": [
+    {
+      "edge_id": "mkt_spend_to_brand_equity",
+      "source": "mkt_spend",
+      "target": "brand_equity",
+      "formula": "brand_equity = 0.1430 * mkt_spend + 31.5208",
+      "metrics": {
+        "r_squared": 0.3725,
+        "rmse": 1.7505,
+        "mae": 1.4657,
+        "mape": 3.09,
+        "train_r2": 0.1791,
+        "test_r2": -4.2117
+      },
+      "residuals": {
+        "mean": 0.0048,
+        "std": 1.7505
+      },
+      "is_valid": false,
+      "notes": [
+        "🔴 과적합 의심: Train R² - Test R² > 0.3"
+      ]
+    },
+    {
+      "edge_id": "cogs_to_price",
+      "source": "cogs",
+      "target": "price",
+      "formula": "price = 1.2343 * cogs + -7.5376",
+      "metrics": {
+        "r_squared": 0.7201,
+        "rmse": 2.0421,
+        "mae": 1.8282,
+        "mape": 1.44,
+        "train_r2": 0.8494,
+        "test_r2": -6.7896
+      },
+      "residuals": {
+        "mean": -0.0006,
+        "std": 2.0421
+      },
+      "is_valid": false,
+      "notes": [
+        "🔴 과적합 의심: Train R² - Test R² > 0.3"
+      ]
+    },
+    {
+      "edge_id": "sales_to_loyalty",
+      "source": "sales",
+      "target": "loyalty",
+      "formula": "loyalty = 0.0041 * sales + 3.3286",
+      "metrics": {
+        "r_squared": 0.28,
+        "rmse": 2.7477,
+        "mae": 2.1786,
+        "mape": 4.26,
+        "train_r2": 0.2971,
+        "test_r2": -1.7816
+      },
+      "residuals": {
+        "mean": -0.5209,
+        "std": 2.6979
+      },
+      "is_valid": false,
+      "notes": [
+        "⚡ R² < 0.3: 관계가 약함, 다른 요인 검토 필요",
+        "🔴 과적합 의심: Train R² - Test R² > 0.3",
+        "🟡 잔차 평균이 0에서 벗어남 (편향 가능)"
+      ]
+    },
+    {
+      "edge_id": "mkt_spend_to_loyalty",
+      "source": "mkt_spend",
+      "target": "loyalty",
+      "formula": "loyalty = -0.0847 * mkt_spend + 59.4854",
+      "metrics": {
+        "r_squared": 0.0609,
+        "rmse": 3.138,
+        "mae": 2.3152,
+        "mape": 4.57,
+        "train_r2": 0.0851,
+        "test_r2": -2.7645
+      },
+      "residuals": {
+        "mean": -0.0033,
+        "std": 3.138
+      },
+      "is_valid": false,
+      "notes": [
+        "⚠️ R² < 0.1: 관계가 매우 약함",
+        "🔴 과적합 의심: Train R² - Test R² > 0.3"
+      ]
+    },
+    {
+      "edge_id": "delivery_time_to_loyalty",
+      "source": "delivery_time",
+      "target": "loyalty",
+      "formula": "loyalty = -2.3102 * delivery_time + 55.9919",
+      "metrics": {
+        "r_squared": 0.0267,
+        "rmse": 3.1946,
+        "mae": 2.303,
+        "mape": 4.5,
+        "train_r2": 0.0226,
+        "test_r2": -0.8655
+      },
+      "residuals": {
+        "mean": 0.0001,
+        "std": 3.1946
+      },
+      "is_valid": false,
+      "notes": [
+        "⚠️ R² < 0.1: 관계가 매우 약함",
+        "🔴 과적합 의심: Train R² - Test R² > 0.3"
+      ]
+    },
+    {
+      "edge_id": "delivery_time_to_csat",
+      "source": "delivery_time",
+      "target": "csat",
+      "formula": "csat = -0.1236 * delivery_time + 1.0021",
+      "metrics": {
+        "r_squared": 0.9857,
+        "rmse": 0.0034,
+        "mae": 0.0028,
+        "mape": 0.42,
+        "train_r2": 0.9853,
+        "test_r2": 0.988
+      },
+      "residuals": {
+        "mean": 0.0001,
+        "std": 0.0034
+      },
+      "is_valid": true,
+      "notes": [
+        "⚠️ R² > 0.95: 과적합 가능성 검토",
+        "✅ 양호한 적합도"
+      ]
+    },
+    {
+      "edge_id": "service_level_to_csat",
+      "source": "service_level",
+      "target": "csat",
+      "formula": "csat = 0.7321 * service_level + 0.0818",
+      "metrics": {
+        "r_squared": 0.9834,
+        "rmse": 0.0037,
+        "mae": 0.0028,
+        "mape": 0.43,
+        "train_r2": 0.9816,
+        "test_r2": 0.9917
+      },
+      "residuals": {
+        "mean": 0.0,
+        "std": 0.0037
+      },
+      "is_valid": true,
+      "notes": [
+        "⚠️ R² > 0.95: 과적합 가능성 검토",
+        "✅ 양호한 적합도"
+      ]
+    },
+    {
+      "edge_id": "refund_rate_to_csat",
+      "source": "refund_rate",
+      "target": "csat",
+      "formula": "csat = -3.8367 * refund_rate + 0.8911",
+      "metrics": {
+        "r_squared": 0.9831,
+        "rmse": 0.0037,
+        "mae": 0.0027,
+        "mape": 0.41,
+        "train_r2": 0.9822,
+        "test_r2": 0.9877
+      },
+      "residuals": {
+        "mean": -0.0,
+        "std": 0.0037
+      },
+      "is_valid": true,
+      "notes": [
+        "⚠️ R² > 0.95: 과적합 가능성 검토",
+        "✅ 양호한 적합도"
+      ]
+    },
+    {
+      "edge_id": "fx_rate_to_price",
+      "source": "fx_rate",
+      "target": "price",
+      "formula": "price = 0.1066 * fx_rate + -8.9984",
+      "metrics": {
+        "r_squared": 0.9377,
+        "rmse": 0.9637,
+        "mae": 0.8241,
+        "mape": 0.65,
+        "train_r2": 0.9429,
+        "test_r2": 0.4221
+      },
+      "residuals": {
+        "mean": -0.0385,
+        "std": 0.9629
+      },
+      "is_valid": false,
+      "notes": [
+        "🔴 과적합 의심: Train R² - Test R² > 0.3",
+        "✅ 양호한 적합도"
+      ]
+    },
+    {
+      "edge_id": "csat_to_loyalty",
+      "source": "csat",
+      "target": "loyalty",
+      "formula": "loyalty = 19.7185 * csat + 36.5653",
+      "metrics": {
+        "r_squared": 0.0302,
+        "rmse": 3.1889,
+        "mae": 2.2924,
+        "mape": 4.48,
+        "train_r2": 0.0272,
+        "test_r2": -0.9406
+      },
+      "residuals": {
+        "mean": -0.0,
+        "std": 3.1889
+      },
+      "is_valid": false,
+      "notes": [
+        "⚠️ R² < 0.1: 관계가 매우 약함",
+        "🔴 과적합 의심: Train R² - Test R² > 0.3"
+      ]
+    },
+    {
+      "edge_id": "fx_rate_to_brand_equity",
+      "source": "fx_rate",
+      "target": "brand_equity",
+      "formula": "brand_equity = 0.0177 * fx_rate + 25.1929",
+      "metrics": {
+        "r_squared": 0.0788,
+        "rmse": 2.1209,
+        "mae": 1.7751,
+        "mape": 3.75,
+        "train_r2": -0.0709,
+        "test_r2": -9.3678
+      },
+      "residuals": {
+        "mean": 0.0435,
+        "std": 2.1204
+      },
+      "is_valid": false,
+      "notes": [
+        "⚠️ R² < 0.1: 관계가 매우 약함",
+        "🔴 과적합 의심: Train R² - Test R² > 0.3"
+      ]
+    },
+    {
+      "edge_id": "demand_to_delivery_time",
+      "source": "demand",
+      "target": "delivery_time",
+      "formula": "delivery_time = -0.0309 * demand + 5.4546",
+      "metrics": {
+        "r_squared": 0.2574,
+        "rmse": 0.1975,
+        "mae": 0.1666,
+        "mape": 6.35,
+        "train_r2": 0.2339,
+        "test_r2": 0.3484
+      },
+      "residuals": {
+        "mean": -0.0026,
+        "std": 0.1975
+      },
+      "is_valid": true,
+      "notes": [
+        "⚡ R² < 0.3: 관계가 약함, 다른 요인 검토 필요"
+      ]
+    },
+    {
+      "edge_id": "fx_rate_to_cogs",
+      "source": "fx_rate",
+      "target": "cogs",
+      "formula": "cogs = 0.0660 * fx_rate + 24.6651",
+      "metrics": {
+        "r_squared": 0.7611,
+        "rmse": 1.2971,
+        "mae": 0.9891,
+        "mape": 0.91,
+        "train_r2": 0.8639,
+        "test_r2": -2.2821
+      },
+      "residuals": {
+        "mean": 0.0033,
+        "std": 1.2971
+      },
+      "is_valid": false,
+      "notes": [
+        "🔴 과적합 의심: Train R² - Test R² > 0.3"
+      ]
+    },
+    {
+      "edge_id": "sales_to_delivery_time",
+      "source": "sales",
+      "target": "delivery_time",
+      "formula": "delivery_time = -0.0003 * sales + 6.6507",
+      "metrics": {
+        "r_squared": -5.5655,
+        "rmse": 0.5872,
+        "mae": 0.5617,
+        "mape": 21.85,
+        "train_r2": -5.9887,
+        "test_r2": -3.927
+      },
+      "residuals": {
+        "mean": -0.5617,
+        "std": 0.171
+      },
+      "is_valid": false,
+      "notes": [
+        "⚠️ R² < 0.1: 관계가 매우 약함",
+        "🟡 잔차 평균이 0에서 벗어남 (편향 가능)"
+      ]
+    },
+    {
+      "edge_id": "profit_to_loyalty",
+      "source": "profit",
+      "target": "loyalty",
+      "formula": "loyalty = 0.0019 * profit + 46.7375",
+      "metrics": {
+        "r_squared": 0.0139,
+        "rmse": 3.2155,
+        "mae": 2.1922,
+        "mape": 4.26,
+        "train_r2": -0.0031,
+        "test_r2": 0.0006
+      },
+      "residuals": {
+        "mean": 0.0605,
+        "std": 3.2149
+      },
+      "is_valid": false,
+      "notes": [
+        "⚠️ R² < 0.1: 관계가 매우 약함"
+      ]
+    },
+    {
+      "edge_id": "profit_to_brand_equity",
+      "source": "profit",
+      "target": "brand_equity",
+      "formula": "brand_equity = 0.0085 * profit + 33.9297",
+      "metrics": {
+        "r_squared": 0.5902,
+        "rmse": 1.4147,
+        "mae": 1.176,
+        "mape": 2.51,
+        "train_r2": 0.3228,
+        "test_r2": 0.4558
+      },
+      "residuals": {
+        "mean": 0.0021,
+        "std": 1.4147
+      },
+      "is_valid": true,
+      "notes": [
+        "✅ 양호한 적합도"
+      ]
+    },
+    {
+      "edge_id": "brand_equity_to_loyalty",
+      "source": "brand_equity",
+      "target": "loyalty",
+      "formula": "loyalty = 0.7878 * brand_equity + 12.2811",
+      "metrics": {
+        "r_squared": 0.289,
+        "rmse": 2.7304,
+        "mae": 1.9266,
+        "mape": 3.69,
+        "train_r2": 0.3017,
+        "test_r2": -1.4567
+      },
+      "residuals": {
+        "mean": -0.0018,
+        "std": 2.7304
+      },
+      "is_valid": false,
+      "notes": [
+        "⚡ R² < 0.3: 관계가 약함, 다른 요인 검토 필요",
+        "🔴 과적합 의심: Train R² - Test R² > 0.3"
+      ]
+    },
+    {
+      "edge_id": "sales_to_profit",
+      "source": "sales",
+      "target": "profit",
+      "formula": "profit = 0.3239 * sales + -2095.5972",
+      "metrics": {
+        "r_squared": 0.5134,
+        "rmse": 139.3009,
+        "mae": 115.0942,
+        "mape": 7.01,
+        "train_r2": 0.2602,
+        "test_r2": -16.4187
+      },
+      "residuals": {
+        "mean": 0.2504,
+        "std": 139.3007
+      },
+      "is_valid": false,
+      "notes": [
+        "🔴 과적합 의심: Train R² - Test R² > 0.3"
+      ]
+    },
+    {
+      "edge_id": "refund_rate_to_loyalty",
+      "source": "refund_rate",
+      "target": "loyalty",
+      "formula": "loyalty = -45.0054 * refund_rate + 52.4128",
+      "metrics": {
+        "r_squared": 0.0105,
+        "rmse": 3.2211,
+        "mae": 2.2961,
+        "mape": 4.49,
+        "train_r2": 0.0052,
+        "test_r2": -0.8218
+      },
+      "residuals": {
+        "mean": 0.0,
+        "std": 3.2211
+      },
+      "is_valid": false,
+      "notes": [
+        "⚠️ R² < 0.1: 관계가 매우 약함",
+        "🔴 과적합 의심: Train R² - Test R² > 0.3"
+      ]
+    },
+    {
+      "edge_id": "loyalty_to_brand_equity",
+      "source": "loyalty",
+      "target": "brand_equity",
+      "formula": "brand_equity = 0.3669 * loyalty + 29.4324",
+      "metrics": {
+        "r_squared": 0.289,
+        "rmse": 1.8633,
+        "mae": 1.6605,
+        "mape": 3.49,
+        "train_r2": 0.2082,
+        "test_r2": -7.7063
+      },
+      "residuals": {
+        "mean": -0.0022,
+        "std": 1.8633
+      },
+      "is_valid": false,
+      "notes": [
+        "⚡ R² < 0.3: 관계가 약함, 다른 요인 검토 필요",
+        "🔴 과적합 의심: Train R² - Test R² > 0.3"
+      ]
+    },
+    {
+      "edge_id": "service_level_to_loyalty",
+      "source": "service_level",
+      "target": "loyalty",
+      "formula": "loyalty = 10.9523 * service_level + 41.0029",
+      "metrics": {
+        "r_squared": 0.0171,
+        "rmse": 3.2104,
+        "mae": 2.3013,
+        "mape": 4.5,
+        "train_r2": 0.0131,
+        "test_r2": -0.896
+      },
+      "residuals": {
+        "mean": -0.0,
+        "std": 3.2104
+      },
+      "is_valid": false,
+      "notes": [
+        "⚠️ R² < 0.1: 관계가 매우 약함",
+        "🔴 과적합 의심: Train R² - Test R² > 0.3"
+      ]
+    },
+    {
+      "edge_id": "price_to_margin",
+      "source": "price",
+      "target": "margin",
+      "formula": "margin = 0.0022 * price + -0.1362",
+      "metrics": {
+        "r_squared": 0.3725,
+        "rmse": 0.0109,
+        "mae": 0.0092,
+        "mape": 6.52,
+        "train_r2": 0.0636,
+        "test_r2": -219.0085
+      },
+      "residuals": {
+        "mean": -0.0008,
+        "std": 0.0109
+      },
+      "is_valid": false,
+      "notes": [
+        "🔴 과적합 의심: Train R² - Test R² > 0.3"
+      ]
+    },
+    {
+      "edge_id": "fx_rate_to_loyalty",
+      "source": "fx_rate",
+      "target": "loyalty",
+      "formula": "loyalty = -0.0391 * fx_rate + 99.6333",
+      "metrics": {
+        "r_squared": 0.1794,
+        "rmse": 2.9332,
+        "mae": 2.3146,
+        "mape": 4.62,
+        "train_r2": 0.1993,
+        "test_r2": -2.1925
+      },
+      "residuals": {
+        "mean": -0.0564,
+        "std": 2.9327
+      },
+      "is_valid": false,
+      "notes": [
+        "⚡ R² < 0.3: 관계가 약함, 다른 요인 검토 필요",
+        "🔴 과적합 의심: Train R² - Test R² > 0.3"
+      ]
+    },
+    {
+      "edge_id": "profit_to_margin",
+      "source": "profit",
+      "target": "margin",
+      "formula": "margin = 0.0001 * profit + 0.0329",
+      "metrics": {
+        "r_squared": -14.6854,
+        "rmse": 0.0547,
+        "mae": 0.0541,
+        "mape": 38.34,
+        "train_r2": -29.4227,
+        "test_r2": -3508.6368
+      },
+      "residuals": {
+        "mean": -0.0541,
+        "std": 0.0076
+      },
+      "is_valid": false,
+      "notes": [
+        "⚠️ R² < 0.1: 관계가 매우 약함",
+        "🔴 과적합 의심: Train R² - Test R² > 0.3",
+        "🟡 잔차 평균이 0에서 벗어남 (편향 가능)"
+      ]
+    },
+    {
+      "edge_id": "fx_rate_to_price_volatility",
+      "source": "fx_rate",
+      "target": "price_volatility",
+      "formula": "price_volatility = 0.0000 * fx_rate + -0.0155",
+      "metrics": {
+        "r_squared": -14.887,
+        "rmse": 0.0319,
+        "mae": 0.0309,
+        "mape": 225.31,
+        "train_r2": -15.7053,
+        "test_r2": -23.8008
+      },
+      "residuals": {
+        "mean": 0.0309,
+        "std": 0.008
+      },
+      "is_valid": false,
+      "notes": [
+        "⚠️ R² < 0.1: 관계가 매우 약함",
+        "🔴 과적합 의심: Train R² - Test R² > 0.3",
+        "🟡 잔차 평균이 0에서 벗어남 (편향 가능)"
+      ]
+    },
+    {
+      "edge_id": "demand_to_loyalty",
+      "source": "demand",
+      "target": "loyalty",
+      "formula": "loyalty = 0.7168 * demand + -15.2454",
+      "metrics": {
+        "r_squared": 0.6927,
+        "rmse": 1.7949,
+        "mae": 1.4849,
+        "mape": 2.98,
+        "train_r2": 0.7016,
+        "test_r2": -0.2952
+      },
+      "residuals": {
+        "mean": 0.0011,
+        "std": 1.7949
+      },
+      "is_valid": false,
+      "notes": [
+        "🔴 과적합 의심: Train R² - Test R² > 0.3"
+      ]
+    },
+    {
+      "edge_id": "price_to_brand_equity",
+      "source": "price",
+      "target": "brand_equity",
+      "formula": "brand_equity = 0.1631 * price + 27.1113",
+      "metrics": {
+        "r_squared": 0.0811,
+        "rmse": 2.1182,
+        "mae": 1.7756,
+        "mape": 3.76,
+        "train_r2": -0.1179,
+        "test_r2": -8.3361
+      },
+      "residuals": {
+        "mean": -0.0025,
+        "std": 2.1182
+      },
+      "is_valid": false,
+      "notes": [
+        "⚠️ R² < 0.1: 관계가 매우 약함",
+        "🔴 과적합 의심: Train R² - Test R² > 0.3"
+      ]
+    },
+    {
+      "edge_id": "pass_through_to_price",
+      "source": "pass_through",
+      "target": "price",
+      "formula": "price = 50.8917 * pass_through + 99.3042",
+      "metrics": {
+        "r_squared": 0.3864,
+        "rmse": 3.0234,
+        "mae": 2.413,
+        "mape": 1.92,
+        "train_r2": 0.3738,
+        "test_r2": -1.5607
+      },
+      "residuals": {
+        "mean": -0.0001,
+        "std": 3.0234
+      },
+      "is_valid": false,
+      "notes": [
+        "🔴 과적합 의심: Train R² - Test R² > 0.3"
+      ]
+    },
+    {
+      "edge_id": "service_level_to_demand",
+      "source": "service_level",
+      "target": "demand",
+      "formula": "demand = 43.7786 * service_level + 55.3634",
+      "metrics": {
+        "r_squared": 0.2023,
+        "rmse": 3.3581,
+        "mae": 2.3464,
+        "mape": 2.53,
+        "train_r2": 0.1775,
+        "test_r2": 0.2373
+      },
+      "residuals": {
+        "mean": -0.0001,
+        "std": 3.3581
+      },
+      "is_valid": true,
+      "notes": [
+        "⚡ R² < 0.3: 관계가 약함, 다른 요인 검토 필요"
+      ]
+    },
+    {
+      "edge_id": "mkt_spend_to_price",
+      "source": "mkt_spend",
+      "target": "price",
+      "formula": "price = 0.2631 * mkt_spend + 96.6279",
+      "metrics": {
+        "r_squared": 0.4131,
+        "rmse": 2.9569,
+        "mae": 2.388,
+        "mape": 1.89,
+        "train_r2": 0.3726,
+        "test_r2": -0.0506
+      },
+      "residuals": {
+        "mean": 0.0005,
+        "std": 2.9569
+      },
+      "is_valid": false,
+      "notes": [
+        "🔴 과적합 의심: Train R² - Test R² > 0.3"
+      ]
+    },
+    {
+      "edge_id": "service_level_to_sales",
+      "source": "service_level",
+      "target": "sales",
+      "formula": "sales = 7318.0833 * service_level + 5548.3821",
+      "metrics": {
+        "r_squared": 0.4096,
+        "rmse": 339.3691,
+        "mae": 260.8203,
+        "mape": 2.28,
+        "train_r2": 0.4351,
+        "test_r2": -1.1268
+      },
+      "residuals": {
+        "mean": -0.0,
+        "std": 339.3691
+      },
+      "is_valid": false,
+      "notes": [
+        "🔴 과적합 의심: Train R² - Test R² > 0.3"
+      ]
+    },
+    {
+      "edge_id": "mkt_spend_to_profit",
+      "source": "mkt_spend",
+      "target": "profit",
+      "formula": "profit = 12.7260 * mkt_spend + 181.3075",
+      "metrics": {
+        "r_squared": 0.361,
+        "rmse": 159.6204,
+        "mae": 134.9247,
+        "mape": 8.15,
+        "train_r2": 0.0007,
+        "test_r2": -20.8321
+      },
+      "residuals": {
+        "mean": -0.0047,
+        "std": 159.6204
+      },
+      "is_valid": false,
+      "notes": [
+        "🔴 과적합 의심: Train R² - Test R² > 0.3"
+      ]
+    },
+    {
+      "edge_id": "fx_rate_to_mkt_spend",
+      "source": "fx_rate",
+      "target": "mkt_spend",
+      "formula": "mkt_spend = 0.1946 * fx_rate + -134.0180",
+      "metrics": {
+        "r_squared": 0.5241,
+        "rmse": 6.5039,
+        "mae": 5.5019,
+        "mape": 5.0,
+        "train_r2": 0.513,
+        "test_r2": 0
+      },
+      "residuals": {
+        "mean": 0.0245,
+        "std": 6.5039
+      },
+      "is_valid": false,
+      "notes": [
+        "🔴 과적합 의심: Train R² - Test R² > 0.3"
+      ]
+    },
+    {
+      "edge_id": "mkt_spend_to_margin",
+      "source": "mkt_spend",
+      "target": "margin",
+      "formula": "margin = 0.0008 * mkt_spend + 0.0456",
+      "metrics": {
+        "r_squared": 0.2066,
+        "rmse": 0.0123,
+        "mae": 0.0107,
+        "mape": 7.29,
+        "train_r2": 0.1204,
+        "test_r2": -363.486
+      },
+      "residuals": {
+        "mean": 0.0049,
+        "std": 0.0113
+      },
+      "is_valid": false,
+      "notes": [
+        "⚡ R² < 0.3: 관계가 약함, 다른 요인 검토 필요",
+        "🔴 과적합 의심: Train R² - Test R² > 0.3",
+        "🟡 잔차 평균이 0에서 벗어남 (편향 가능)"
+      ]
+    },
+    {
+      "edge_id": "service_level_to_delivery_time",
+      "source": "service_level",
+      "target": "delivery_time",
+      "formula": "delivery_time = -5.8859 * service_level + 7.4166",
+      "metrics": {
+        "r_squared": 0.9845,
+        "rmse": 0.0286,
+        "mae": 0.0192,
+        "mape": 0.71,
+        "train_r2": 0.982,
+        "test_r2": 0.9941
+      },
+      "residuals": {
+        "mean": 0.0,
+        "std": 0.0286
+      },
+      "is_valid": true,
+      "notes": [
+        "⚠️ R² > 0.95: 과적합 가능성 검토",
+        "✅ 양호한 적합도"
+      ]
+    },
+    {
+      "edge_id": "fx_rate_to_profit",
+      "source": "fx_rate",
+      "target": "profit",
+      "formula": "profit = 2.9841 * fx_rate + -2169.1101",
+      "metrics": {
+        "r_squared": 0.2747,
+        "rmse": 170.0614,
+        "mae": 146.0057,
+        "mape": 8.91,
+        "train_r2": 0.0784,
+        "test_r2": -31.6899
+      },
+      "residuals": {
+        "mean": 0.051,
+        "std": 170.0614
+      },
+      "is_valid": false,
+      "notes": [
+        "⚡ R² < 0.3: 관계가 약함, 다른 요인 검토 필요",
+        "🔴 과적합 의심: Train R² - Test R² > 0.3"
+      ]
+    },
+    {
+      "edge_id": "price_to_loyalty",
+      "source": "price",
+      "target": "loyalty",
+      "formula": "loyalty = -0.3199 * price + 90.3322",
+      "metrics": {
+        "r_squared": 0.1454,
+        "rmse": 2.9935,
+        "mae": 2.3998,
+        "mape": 4.78,
+        "train_r2": 0.1735,
+        "test_r2": -2.8477
+      },
+      "residuals": {
+        "mean": 0.0008,
+        "std": 2.9935
+      },
+      "is_valid": false,
+      "notes": [
+        "⚡ R² < 0.3: 관계가 약함, 다른 요인 검토 필요",
+        "🔴 과적합 의심: Train R² - Test R² > 0.3"
+      ]
+    },
+    {
+      "edge_id": "margin_to_brand_equity",
+      "source": "margin",
+      "target": "brand_equity",
+      "formula": "brand_equity = 102.5500 * margin + 33.2587",
+      "metrics": {
+        "r_squared": 0.4101,
+        "rmse": 1.6972,
+        "mae": 1.3869,
+        "mape": 2.97,
+        "train_r2": 0.0466,
+        "test_r2": -0.2158
+      },
+      "residuals": {
+        "mean": 0.0,
+        "std": 1.6972
+      },
+      "is_valid": true,
+      "notes": [
+        "🟡 약한 과적합: Train R² - Test R² > 0.15"
+      ]
+    },
+    {
+      "edge_id": "fx_rate_to_pass_through",
+      "source": "fx_rate",
+      "target": "pass_through",
+      "formula": "pass_through = 0.0007 * fx_rate + -0.3603",
+      "metrics": {
+        "r_squared": 0.2665,
+        "rmse": 0.0404,
+        "mae": 0.0351,
+        "mape": 6.44,
+        "train_r2": 0.1743,
+        "test_r2": 0
+      },
+      "residuals": {
+        "mean": 0.004,
+        "std": 0.0402
+      },
+      "is_valid": true,
+      "notes": [
+        "⚡ R² < 0.3: 관계가 약함, 다른 요인 검토 필요",
+        "🟡 약한 과적합: Train R² - Test R² > 0.15"
+      ]
+    },
+    {
+      "edge_id": "cogs_to_demand",
+      "source": "cogs",
+      "target": "demand",
+      "formula": "demand = -0.8093 * cogs + 178.7065",
+      "metrics": {
+        "r_squared": 0.3262,
+        "rmse": 3.0864,
+        "mae": 2.6336,
+        "mape": 2.9,
+        "train_r2": 0.3282,
+        "test_r2": 0.0436
+      },
+      "residuals": {
+        "mean": 0.002,
+        "std": 3.0864
+      },
+      "is_valid": true,
+      "notes": [
+        "🟡 약한 과적합: Train R² - Test R² > 0.15"
+      ]
+    },
+    {
+      "edge_id": "cogs_to_margin",
+      "source": "cogs",
+      "target": "margin",
+      "formula": "margin = 0.0005 * cogs + 0.0830",
+      "metrics": {
+        "r_squared": -0.0677,
+        "rmse": 0.0143,
+        "mae": 0.011,
+        "mape": 7.46,
+        "train_r2": 0.0568,
+        "test_r2": -557.7042
+      },
+      "residuals": {
+        "mean": 0.0039,
+        "std": 0.0137
+      },
+      "is_valid": false,
+      "notes": [
+        "⚠️ R² < 0.1: 관계가 매우 약함",
+        "🔴 과적합 의심: Train R² - Test R² > 0.3",
+        "🟡 잔차 평균이 0에서 벗어남 (편향 가능)"
+      ]
+    },
+    {
+      "edge_id": "sales_to_brand_equity",
+      "source": "sales",
+      "target": "brand_equity",
+      "formula": "brand_equity = 0.0041 * sales + 0.3754",
+      "metrics": {
+        "r_squared": 0.6634,
+        "rmse": 1.2821,
+        "mae": 1.0045,
+        "mape": 2.09,
+        "train_r2": 0.6508,
+        "test_r2": -3.6419
+      },
+      "residuals": {
+        "mean": 0.2818,
+        "std": 1.2507
+      },
+      "is_valid": false,
+      "notes": [
+        "🔴 과적합 의심: Train R² - Test R² > 0.3",
+        "🟡 잔차 평균이 0에서 벗어남 (편향 가능)"
+      ]
+    },
+    {
+      "edge_id": "sales_to_margin",
+      "source": "sales",
+      "target": "margin",
+      "formula": "margin = 0.0000 * sales + -0.0412",
+      "metrics": {
+        "r_squared": -174.6025,
+        "rmse": 0.1829,
+        "mae": 0.1823,
+        "mape": 129.46,
+        "train_r2": -347.0878,
+        "test_r2": -37163.8833
+      },
+      "residuals": {
+        "mean": 0.1823,
+        "std": 0.0138
+      },
+      "is_valid": false,
+      "notes": [
+        "⚠️ R² < 0.1: 관계가 매우 약함",
+        "🔴 과적합 의심: Train R² - Test R² > 0.3",
+        "🟡 잔차 평균이 0에서 벗어남 (편향 가능)"
+      ]
+    },
+    {
+      "edge_id": "margin_to_loyalty",
+      "source": "margin",
+      "target": "loyalty",
+      "formula": "loyalty = -13.4564 * margin + 51.7820",
+      "metrics": {
+        "r_squared": 0.0033,
+        "rmse": 3.2328,
+        "mae": 2.3451,
+        "mape": 4.6,
+        "train_r2": 0.0109,
+        "test_r2": -1.7346
+      },
+      "residuals": {
+        "mean": -0.0,
+        "std": 3.2328
+      },
+      "is_valid": false,
+      "notes": [
+        "⚠️ R² < 0.1: 관계가 매우 약함",
+        "🔴 과적합 의심: Train R² - Test R² > 0.3"
+      ]
+    },
+    {
+      "edge_id": "pass_through_to_mkt_spend",
+      "source": "pass_through",
+      "target": "mkt_spend",
+      "formula": "mkt_spend = 100.0000 * pass_through + 60.0000",
+      "metrics": {
+        "r_squared": 0.25,
+        "rmse": 8.165,
+        "mae": 6.6667,
+        "mape": 6.11,
+        "train_r2": 0.125,
+        "test_r2": 0
+      },
+      "residuals": {
+        "mean": 0.0,
+        "std": 8.165
+      },
+      "is_valid": true,
+      "notes": [
+        "⚡ R² < 0.3: 관계가 약함, 다른 요인 검토 필요"
+      ]
+    },
+    {
+      "edge_id": "pass_through_to_margin",
+      "source": "pass_through",
+      "target": "margin",
+      "formula": "margin = 0.2790 * pass_through + -0.0076",
+      "metrics": {
+        "r_squared": 0.9082,
+        "rmse": 0.0042,
+        "mae": 0.003,
+        "mape": 2.24,
+        "train_r2": 0.764,
+        "test_r2": -3.1326
+      },
+      "residuals": {
+        "mean": -0.0001,
+        "std": 0.0042
+      },
+      "is_valid": false,
+      "notes": [
+        "🔴 과적합 의심: Train R² - Test R² > 0.3"
+      ]
+    },
+    {
+      "edge_id": "sales_to_csat",
+      "source": "sales",
+      "target": "csat",
+      "formula": "csat = 0.0000 * sales + 0.1777",
+      "metrics": {
+        "r_squared": -304.4989,
+        "rmse": 0.4985,
+        "mae": 0.4977,
+        "mape": 73.64,
+        "train_r2": -286.0276,
+        "test_r2": -394.3352
+      },
+      "residuals": {
+        "mean": 0.4977,
+        "std": 0.0285
+      },
+      "is_valid": false,
+      "notes": [
+        "⚠️ R² < 0.1: 관계가 매우 약함",
+        "🔴 과적합 의심: Train R² - Test R² > 0.3",
+        "🟡 잔차 평균이 0에서 벗어남 (편향 가능)"
+      ]
+    },
+    {
+      "edge_id": "delivery_time_to_demand",
+      "source": "delivery_time",
+      "target": "demand",
+      "formula": "demand = -8.3260 * delivery_time + 112.8758",
+      "metrics": {
+        "r_squared": 0.2575,
+        "rmse": 3.2398,
+        "mae": 2.3253,
+        "mape": 2.51,
+        "train_r2": 0.2331,
+        "test_r2": 0.3071
+      },
+      "residuals": {
+        "mean": -0.0001,
+        "std": 3.2398
+      },
+      "is_valid": true,
+      "notes": [
+        "⚡ R² < 0.3: 관계가 약함, 다른 요인 검토 필요"
+      ]
+    },
+    {
+      "edge_id": "refund_rate_to_delivery_time",
+      "source": "refund_rate",
+      "target": "delivery_time",
+      "formula": "delivery_time = 30.7786 * refund_rate + 0.9142",
+      "metrics": {
+        "r_squared": 0.98,
+        "rmse": 0.0324,
+        "mae": 0.0183,
+        "mape": 0.68,
+        "train_r2": 0.9756,
+        "test_r2": 0.997
+      },
+      "residuals": {
+        "mean": -0.0,
+        "std": 0.0324
+      },
+      "is_valid": true,
+      "notes": [
+        "⚠️ R² > 0.95: 과적합 가능성 검토",
+        "✅ 양호한 적합도"
+      ]
+    },
+    {
+      "edge_id": "delivery_time_to_brand_equity",
+      "source": "delivery_time",
+      "target": "brand_equity",
+      "formula": "brand_equity = -3.0159 * delivery_time + 55.7076",
+      "metrics": {
+        "r_squared": 0.0978,
+        "rmse": 2.0989,
+        "mae": 1.7066,
+        "mape": 3.62,
+        "train_r2": 0.016,
+        "test_r2": -10.4678
+      },
+      "residuals": {
+        "mean": 0.0,
+        "std": 2.0989
+      },
+      "is_valid": false,
+      "notes": [
+        "⚠️ R² < 0.1: 관계가 매우 약함",
+        "🔴 과적합 의심: Train R² - Test R² > 0.3"
+      ]
+    },
+    {
+      "edge_id": "profit_to_csat",
+      "source": "profit",
+      "target": "csat",
+      "formula": "csat = 0.0000 * profit + 0.6006",
+      "metrics": {
+        "r_squared": -6.8748,
+        "rmse": 0.08,
+        "mae": 0.0748,
+        "mape": 10.91,
+        "train_r2": -6.4895,
+        "test_r2": -8.7507
+      },
+      "residuals": {
+        "mean": 0.0748,
+        "std": 0.0285
+      },
+      "is_valid": false,
+      "notes": [
+        "⚠️ R² < 0.1: 관계가 매우 약함",
+        "🔴 과적합 의심: Train R² - Test R² > 0.3",
+        "🟡 잔차 평균이 0에서 벗어남 (편향 가능)"
+      ]
+    },
+    {
+      "edge_id": "refund_rate_to_demand",
+      "source": "refund_rate",
+      "target": "demand",
+      "formula": "demand = -222.3353 * refund_rate + 103.3570",
+      "metrics": {
+        "r_squared": 0.19,
+        "rmse": 3.384,
+        "mae": 2.3359,
+        "mape": 2.52,
+        "train_r2": 0.1594,
+        "test_r2": 0.2977
+      },
+      "residuals": {
+        "mean": 0.0,
+        "std": 3.384
+      },
+      "is_valid": true,
+      "notes": [
+        "⚡ R² < 0.3: 관계가 약함, 다른 요인 검토 필요"
+      ]
+    },
+    {
+      "edge_id": "refund_rate_to_brand_equity",
+      "source": "refund_rate",
+      "target": "brand_equity",
+      "formula": "brand_equity = -86.0133 * refund_rate + 52.5676",
+      "metrics": {
+        "r_squared": 0.0823,
+        "rmse": 2.1169,
+        "mae": 1.7228,
+        "mape": 3.65,
+        "train_r2": -0.012,
+        "test_r2": -10.4401
+      },
+      "residuals": {
+        "mean": 0.0,
+        "std": 2.1169
+      },
+      "is_valid": false,
+      "notes": [
+        "⚠️ R² < 0.1: 관계가 매우 약함",
+        "🔴 과적합 의심: Train R² - Test R² > 0.3"
+      ]
+    },
+    {
+      "edge_id": "csat_to_demand",
+      "source": "csat",
+      "target": "demand",
+      "formula": "demand = 67.0895 * csat + 45.5471",
+      "metrics": {
+        "r_squared": 0.259,
+        "rmse": 3.2366,
+        "mae": 2.2514,
+        "mape": 2.43,
+        "train_r2": 0.2387,
+        "test_r2": 0.2534
+      },
+      "residuals": {
+        "mean": 0.0,
+        "std": 3.2366
+      },
+      "is_valid": true,
+      "notes": [
+        "⚡ R² < 0.3: 관계가 약함, 다른 요인 검토 필요"
+      ]
+    },
+    {
+      "edge_id": "demand_to_profit",
+      "source": "demand",
+      "target": "profit",
+      "formula": "profit = 11.4027 * demand + 587.5525",
+      "metrics": {
+        "r_squared": 0.0461,
+        "rmse": 195.0285,
+        "mae": 175.1112,
+        "mape": 10.62,
+        "train_r2": -0.3277,
+        "test_r2": -37.6933
+      },
+      "residuals": {
+        "mean": 0.0031,
+        "std": 195.0285
+      },
+      "is_valid": false,
+      "notes": [
+        "⚠️ R² < 0.1: 관계가 매우 약함",
+        "🔴 과적합 의심: Train R² - Test R² > 0.3"
+      ]
+    },
+    {
+      "edge_id": "cogs_to_sales",
+      "source": "cogs",
+      "target": "sales",
+      "formula": "sales = 14.3808 * cogs + 9920.6711",
+      "metrics": {
+        "r_squared": 0.0075,
+        "rmse": 440.0348,
+        "mae": 371.4801,
+        "mape": 3.25,
+        "train_r2": -0.0248,
+        "test_r2": -1.8032
+      },
+      "residuals": {
+        "mean": -0.0015,
+        "std": 440.0348
+      },
+      "is_valid": false,
+      "notes": [
+        "⚠️ R² < 0.1: 관계가 매우 약함",
+        "🔴 과적합 의심: Train R² - Test R² > 0.3"
+      ]
+    },
+    {
+      "edge_id": "pass_through_to_loyalty",
+      "source": "pass_through",
+      "target": "loyalty",
+      "formula": "loyalty = 4.5833 * pass_through + 47.4383",
+      "metrics": {
+        "r_squared": 0.0045,
+        "rmse": 3.2309,
+        "mae": 2.2594,
+        "mape": 4.41,
+        "train_r2": -0.0078,
+        "test_r2": -0.3527
+      },
+      "residuals": {
+        "mean": 0.0001,
+        "std": 3.2309
+      },
+      "is_valid": false,
+      "notes": [
+        "⚠️ R² < 0.1: 관계가 매우 약함",
+        "🔴 과적합 의심: Train R² - Test R² > 0.3"
+      ]
+    },
+    {
+      "edge_id": "margin_to_price_volatility",
+      "source": "margin",
+      "target": "price_volatility",
+      "formula": "price_volatility = -0.1088 * margin + 0.0307",
+      "metrics": {
+        "r_squared": 0.0351,
+        "rmse": 0.0079,
+        "mae": 0.0055,
+        "mape": 42.7,
+        "train_r2": -0.0549,
+        "test_r2": -0.1833
+      },
+      "residuals": {
+        "mean": 0.0,
+        "std": 0.0079
+      },
+      "is_valid": false,
+      "notes": [
+        "⚠️ R² < 0.1: 관계가 매우 약함"
+      ]
+    },
+    {
+      "edge_id": "pass_through_to_cogs",
+      "source": "pass_through",
+      "target": "cogs",
+      "formula": "cogs = 7.9083 * pass_through + 104.3333",
+      "metrics": {
+        "r_squared": 0.0197,
+        "rmse": 2.6271,
+        "mae": 2.0906,
+        "mape": 1.93,
+        "train_r2": 0.0545,
+        "test_r2": -1.8511
+      },
+      "residuals": {
+        "mean": 0.0001,
+        "std": 2.6271
+      },
+      "is_valid": false,
+      "notes": [
+        "⚠️ R² < 0.1: 관계가 매우 약함",
+        "🔴 과적합 의심: Train R² - Test R² > 0.3"
+      ]
+    },
+    {
+      "edge_id": "price_to_profit",
+      "source": "price",
+      "target": "profit",
+      "formula": "profit = 31.2268 * price + -2324.9337",
+      "metrics": {
+        "r_squared": 0.3643,
+        "rmse": 159.2119,
+        "mae": 132.4544,
+        "mape": 8.12,
+        "train_r2": 0.1598,
+        "test_r2": -26.4435
+      },
+      "residuals": {
+        "mean": 0.0004,
+        "std": 159.2119
+      },
+      "is_valid": false,
+      "notes": [
+        "🔴 과적합 의심: Train R² - Test R² > 0.3"
+      ]
+    },
+    {
+      "edge_id": "demand_to_refund_rate",
+      "source": "demand",
+      "target": "refund_rate",
+      "formula": "refund_rate = -0.0009 * demand + 0.1338",
+      "metrics": {
+        "r_squared": -0.1336,
+        "rmse": 0.0078,
+        "mae": 0.006,
+        "mape": 10.13,
+        "train_r2": -0.1152,
+        "test_r2": -0.2056
+      },
+      "residuals": {
+        "mean": 0.0042,
+        "std": 0.0066
+      },
+      "is_valid": false,
+      "notes": [
+        "⚠️ R² < 0.1: 관계가 매우 약함",
+        "🟡 잔차 평균이 0에서 벗어남 (편향 가능)"
+      ]
+    },
+    {
+      "edge_id": "mkt_spend_to_cogs",
+      "source": "mkt_spend",
+      "target": "cogs",
+      "formula": "cogs = 0.1202 * mkt_spend + 94.9275",
+      "metrics": {
+        "r_squared": 0.1824,
+        "rmse": 2.3992,
+        "mae": 1.9629,
+        "mape": 1.81,
+        "train_r2": 0.2573,
+        "test_r2": -2.636
+      },
+      "residuals": {
+        "mean": 0.0009,
+        "std": 2.3992
+      },
+      "is_valid": false,
+      "notes": [
+        "⚡ R² < 0.3: 관계가 약함, 다른 요인 검토 필요",
+        "🔴 과적합 의심: Train R² - Test R² > 0.3"
+      ]
+    },
+    {
+      "edge_id": "pass_through_to_profit",
+      "source": "pass_through",
+      "target": "profit",
+      "formula": "profit = 3984.2583 * pass_through + -501.3550",
+      "metrics": {
+        "r_squared": 0.8847,
+        "rmse": 67.8084,
+        "mae": 53.2318,
+        "mape": 3.35,
+        "train_r2": 0.7464,
+        "test_r2": -0.2153
+      },
+      "residuals": {
+        "mean": 0.0,
+        "std": 67.8084
+      },
+      "is_valid": false,
+      "notes": [
+        "🔴 과적합 의심: Train R² - Test R² > 0.3"
+      ]
+    },
+    {
+      "edge_id": "service_level_to_refund_rate",
+      "source": "service_level",
+      "target": "refund_rate",
+      "formula": "refund_rate = -0.1901 * service_level + 0.2103",
+      "metrics": {
+        "r_squared": 0.9922,
+        "rmse": 0.0007,
+        "mae": 0.0005,
+        "mape": 0.97,
+        "train_r2": 0.9915,
+        "test_r2": 0.995
+      },
+      "residuals": {
+        "mean": 0.0,
+        "std": 0.0006
+      },
+      "is_valid": true,
+      "notes": [
+        "⚠️ R² > 0.95: 과적합 가능성 검토",
+        "✅ 양호한 적합도"
+      ]
+    },
+    {
+      "edge_id": "service_level_to_brand_equity",
+      "source": "service_level",
+      "target": "brand_equity",
+      "formula": "brand_equity = 16.2486 * service_level + 34.5582",
+      "metrics": {
+        "r_squared": 0.0807,
+        "rmse": 2.1187,
+        "mae": 1.7178,
+        "mape": 3.64,
+        "train_r2": -0.0072,
+        "test_r2": -10.5944
+      },
+      "residuals": {
+        "mean": 0.0,
+        "std": 2.1187
+      },
+      "is_valid": false,
+      "notes": [
+        "⚠️ R² < 0.1: 관계가 매우 약함",
+        "🔴 과적합 의심: Train R² - Test R² > 0.3"
+      ]
+    },
+    {
+      "edge_id": "csat_to_brand_equity",
+      "source": "csat",
+      "target": "brand_equity",
+      "formula": "brand_equity = 24.7021 * csat + 31.0489",
+      "metrics": {
+        "r_squared": 0.1016,
+        "rmse": 2.0944,
+        "mae": 1.6958,
+        "mape": 3.59,
+        "train_r2": 0.031,
+        "test_r2": -10.6388
+      },
+      "residuals": {
+        "mean": 0.0,
+        "std": 2.0944
+      },
+      "is_valid": false,
+      "notes": [
+        "⚡ R² < 0.3: 관계가 약함, 다른 요인 검토 필요",
+        "🔴 과적합 의심: Train R² - Test R² > 0.3"
+      ]
+    },
+    {
+      "edge_id": "mkt_spend_to_price_volatility",
+      "source": "mkt_spend",
+      "target": "price_volatility",
+      "formula": "price_volatility = -0.0001 * mkt_spend + 0.0252",
+      "metrics": {
+        "r_squared": -0.026,
+        "rmse": 0.0081,
+        "mae": 0.0056,
+        "mape": 41.15,
+        "train_r2": -0.1272,
+        "test_r2": -0.2143
+      },
+      "residuals": {
+        "mean": 0.0015,
+        "std": 0.008
+      },
+      "is_valid": false,
+      "notes": [
+        "⚠️ R² < 0.1: 관계가 매우 약함",
+        "🟡 잔차 평균이 0에서 벗어남 (편향 가능)"
+      ]
+    },
+    {
+      "edge_id": "mkt_spend_to_fx_rate",
+      "source": "mkt_spend",
+      "target": "fx_rate",
+      "formula": "fx_rate = 2.6931 * mkt_spend + 965.7362",
+      "metrics": {
+        "r_squared": 0.5241,
+        "rmse": 24.1937,
+        "mae": 19.2606,
+        "mape": 1.52,
+        "train_r2": 0.5244,
+        "test_r2": -0.0746
+      },
+      "residuals": {
+        "mean": -0.0042,
+        "std": 24.1937
+      },
+      "is_valid": false,
+      "notes": [
+        "🔴 과적합 의심: Train R² - Test R² > 0.3"
+      ]
+    },
+    {
+      "edge_id": "profit_to_delivery_time",
+      "source": "profit",
+      "target": "delivery_time",
+      "formula": "delivery_time = -0.0004 * profit + 3.2847",
+      "metrics": {
+        "r_squared": 0.1164,
+        "rmse": 0.2154,
+        "mae": 0.1831,
+        "mape": 6.89,
+        "train_r2": 0.1949,
+        "test_r2": -0.1874
+      },
+      "residuals": {
+        "mean": 0.0092,
+        "std": 0.2152
+      },
+      "is_valid": false,
+      "notes": [
+        "⚡ R² < 0.3: 관계가 약함, 다른 요인 검토 필요",
+        "🔴 과적합 의심: Train R² - Test R² > 0.3"
+      ]
+    },
+    {
+      "edge_id": "cogs_to_csat",
+      "source": "cogs",
+      "target": "csat",
+      "formula": "csat = 0.0010 * cogs + 0.5646",
+      "metrics": {
+        "r_squared": 0.0029,
+        "rmse": 0.0285,
+        "mae": 0.0236,
+        "mape": 3.53,
+        "train_r2": 0.0037,
+        "test_r2": -0.0021
+      },
+      "residuals": {
+        "mean": 0.0022,
+        "std": 0.0284
+      },
+      "is_valid": false,
+      "notes": [
+        "⚠️ R² < 0.1: 관계가 매우 약함"
+      ]
+    },
+    {
+      "edge_id": "demand_to_csat",
+      "source": "demand",
+      "target": "csat",
+      "formula": "csat = 0.0039 * demand + 0.3246",
+      "metrics": {
+        "r_squared": 0.2433,
+        "rmse": 0.0248,
+        "mae": 0.02,
+        "mape": 3.0,
+        "train_r2": 0.2387,
+        "test_r2": 0.265
+      },
+      "residuals": {
+        "mean": -0.0036,
+        "std": 0.0246
+      },
+      "is_valid": true,
+      "notes": [
+        "⚡ R² < 0.3: 관계가 약함, 다른 요인 검토 필요",
+        "🟡 잔차 평균이 0에서 벗어남 (편향 가능)"
+      ]
+    },
+    {
+      "edge_id": "sales_to_refund_rate",
+      "source": "sales",
+      "target": "refund_rate",
+      "formula": "refund_rate = -0.0000 * sales + 0.1786",
+      "metrics": {
+        "r_squared": -275.7065,
+        "rmse": 0.1226,
+        "mae": 0.1224,
+        "mape": 223.1,
+        "train_r2": -269.3185,
+        "test_r2": -300.6649
+      },
+      "residuals": {
+        "mean": -0.1224,
+        "std": 0.0074
+      },
+      "is_valid": false,
+      "notes": [
+        "⚠️ R² < 0.1: 관계가 매우 약함",
+        "🔴 과적합 의심: Train R² - Test R² > 0.3",
+        "🟡 잔차 평균이 0에서 벗어남 (편향 가능)"
+      ]
+    },
+    {
+      "edge_id": "pass_through_to_brand_equity",
+      "source": "pass_through",
+      "target": "brand_equity",
+      "formula": "brand_equity = 30.9167 * pass_through + 31.2433",
+      "metrics": {
+        "r_squared": 0.435,
+        "rmse": 1.661,
+        "mae": 1.4215,
+        "mape": 3.03,
+        "train_r2": 0.0997,
+        "test_r2": -0.425
+      },
+      "residuals": {
+        "mean": 0.0,
+        "std": 1.661
+      },
+      "is_valid": false,
+      "notes": [
+        "🔴 과적합 의심: Train R² - Test R² > 0.3"
+      ]
+    },
+    {
+      "edge_id": "pass_through_to_price_volatility",
+      "source": "pass_through",
+      "target": "price_volatility",
+      "formula": "price_volatility = -0.0212 * pass_through + 0.0267",
+      "metrics": {
+        "r_squared": 0.0156,
+        "rmse": 0.0079,
+        "mae": 0.0055,
+        "mape": 43.82,
+        "train_r2": -0.0559,
+        "test_r2": -0.3698
+      },
+      "residuals": {
+        "mean": -0.0,
+        "std": 0.0079
+      },
+      "is_valid": false,
+      "notes": [
+        "⚠️ R² < 0.1: 관계가 매우 약함",
+        "🔴 과적합 의심: Train R² - Test R² > 0.3"
+      ]
+    },
+    {
+      "edge_id": "cogs_to_profit",
+      "source": "cogs",
+      "target": "profit",
+      "formula": "profit = 8.4837 * cogs + 702.6721",
+      "metrics": {
+        "r_squared": 0.0127,
+        "rmse": 198.4124,
+        "mae": 177.3346,
+        "mape": 10.78,
+        "train_r2": -0.2294,
+        "test_r2": -44.4292
+      },
+      "residuals": {
+        "mean": -0.0044,
+        "std": 198.4124
+      },
+      "is_valid": false,
+      "notes": [
+        "⚠️ R² < 0.1: 관계가 매우 약함",
+        "🔴 과적합 의심: Train R² - Test R² > 0.3"
+      ]
+    },
+    {
+      "edge_id": "cogs_to_brand_equity",
+      "source": "cogs",
+      "target": "brand_equity",
+      "formula": "brand_equity = -0.0599 * cogs + 54.2380",
+      "metrics": {
+        "r_squared": 0.0052,
+        "rmse": 2.204,
+        "mae": 1.751,
+        "mape": 3.72,
+        "train_r2": -0.1666,
+        "test_r2": -9.9925
+      },
+      "residuals": {
+        "mean": -0.0036,
+        "std": 2.204
+      },
+      "is_valid": false,
+      "notes": [
+        "⚠️ R² < 0.1: 관계가 매우 약함",
+        "🔴 과적합 의심: Train R² - Test R² > 0.3"
+      ]
+    },
+    {
+      "edge_id": "demand_to_sales",
+      "source": "demand",
+      "target": "sales",
+      "formula": "sales = 80.8335 * demand + 4137.3475",
+      "metrics": {
+        "r_squared": 0.4735,
+        "rmse": 320.4938,
+        "mae": 272.1277,
+        "mape": 2.36,
+        "train_r2": 0.4198,
+        "test_r2": -0.1109
+      },
+      "residuals": {
+        "mean": -0.0007,
+        "std": 320.4938
+      },
+      "is_valid": false,
+      "notes": [
+        "🔴 과적합 의심: Train R² - Test R² > 0.3"
+      ]
+    },
+    {
+      "edge_id": "fx_rate_to_demand",
+      "source": "fx_rate",
+      "target": "demand",
+      "formula": "demand = -0.0465 * fx_rate + 149.9915",
+      "metrics": {
+        "r_squared": 0.1883,
+        "rmse": 3.3875,
+        "mae": 2.785,
+        "mape": 3.06,
+        "train_r2": 0.2254,
+        "test_r2": -0.6219
+      },
+      "residuals": {
+        "mean": -0.0343,
+        "std": 3.3873
+      },
+      "is_valid": false,
+      "notes": [
+        "⚡ R² < 0.3: 관계가 약함, 다른 요인 검토 필요",
+        "🔴 과적합 의심: Train R² - Test R² > 0.3"
+      ]
+    },
+    {
+      "edge_id": "pass_through_to_sales",
+      "source": "pass_through",
+      "target": "sales",
+      "formula": "sales = 5184.6042 * pass_through + 8716.5992",
+      "metrics": {
+        "r_squared": 0.3062,
+        "rmse": 367.9037,
+        "mae": 316.2468,
+        "mape": 2.77,
+        "train_r2": 0.1906,
+        "test_r2": -0.0032
+      },
+      "residuals": {
+        "mean": -0.0001,
+        "std": 367.9037
+      },
+      "is_valid": true,
+      "notes": [
+        "🟡 약한 과적합: Train R² - Test R² > 0.15"
+      ]
+    },
+    {
+      "edge_id": "profit_to_price_volatility",
+      "source": "profit",
+      "target": "price_volatility",
+      "formula": "price_volatility = -0.0000 * profit + 0.0292",
+      "metrics": {
+        "r_squared": -2.9762,
+        "rmse": 0.016,
+        "mae": 0.0148,
+        "mape": 138.26,
+        "train_r2": -2.3536,
+        "test_r2": -11.8394
+      },
+      "residuals": {
+        "mean": -0.0138,
+        "std": 0.008
+      },
+      "is_valid": false,
+      "notes": [
+        "⚠️ R² < 0.1: 관계가 매우 약함",
+        "🔴 과적합 의심: Train R² - Test R² > 0.3",
+        "🟡 잔차 평균이 0에서 벗어남 (편향 가능)"
+      ]
+    },
+    {
+      "edge_id": "mkt_spend_to_sales",
+      "source": "mkt_spend",
+      "target": "sales",
+      "formula": "sales = 20.9644 * mkt_spend + 9105.7613",
+      "metrics": {
+        "r_squared": 0.2003,
+        "rmse": 394.9933,
+        "mae": 338.937,
+        "mape": 2.96,
+        "train_r2": 0.1064,
+        "test_r2": -0.5607
+      },
+      "residuals": {
+        "mean": -0.0052,
+        "std": 394.9933
+      },
+      "is_valid": false,
+      "notes": [
+        "⚡ R² < 0.3: 관계가 약함, 다른 요인 검토 필요",
+        "🔴 과적합 의심: Train R² - Test R² > 0.3"
+      ]
+    },
+    {
+      "edge_id": "price_to_demand",
+      "source": "price",
+      "target": "demand",
+      "formula": "demand = -0.4335 * price + 145.6672",
+      "metrics": {
+        "r_squared": 0.198,
+        "rmse": 3.3672,
+        "mae": 2.7886,
+        "mape": 3.06,
+        "train_r2": 0.2532,
+        "test_r2": -0.8534
+      },
+      "residuals": {
+        "mean": 0.0054,
+        "std": 3.3672
+      },
+      "is_valid": false,
+      "notes": [
+        "⚡ R² < 0.3: 관계가 약함, 다른 요인 검토 필요",
+        "🔴 과적합 의심: Train R² - Test R² > 0.3"
+      ]
+    },
+    {
+      "edge_id": "loyalty_to_profit",
+      "source": "loyalty",
+      "target": "profit",
+      "formula": "profit = 7.3669 * loyalty + 1256.1014",
+      "metrics": {
+        "r_squared": 0.0143,
+        "rmse": 198.2553,
+        "mae": 176.3937,
+        "mape": 10.73,
+        "train_r2": -0.3384,
+        "test_r2": -40.2317
+      },
+      "residuals": {
+        "mean": -0.0001,
+        "std": 198.2553
+      },
+      "is_valid": false,
+      "notes": [
+        "⚠️ R² < 0.1: 관계가 매우 약함",
+        "🔴 과적합 의심: Train R² - Test R² > 0.3"
+      ]
+    }
+  ],
+  "mindsdb_results": [
+    {
+      "model_name": "whatif_cogs_model",
+      "target_column": "cogs",
+      "sample_size": 10,
+      "metrics": {
+        "r_squared": 0.4608,
+        "rmse": 1.5145,
+        "mae": 1.2199,
+        "mape": 1.11
+      }
+    },
+    {
+      "model_name": "whatif_demand_model",
+      "target_column": "demand",
+      "sample_size": 10,
+      "metrics": {
+        "r_squared": 0.142,
+        "rmse": 2.3498,
+        "mae": 1.9002,
+        "mape": 2.12
+      }
+    },
+    {
+      "model_name": "whatif_brand_model",
+      "target_column": "brand_equity",
+      "sample_size": 10,
+      "metrics": {
+        "r_squared": -1.6613,
+        "rmse": 3.8757,
+        "mae": 3.5511,
+        "mape": 7.63
+      }
+    },
+    {
+      "model_name": "whatif_profit_model",
+      "target_column": "profit",
+      "sample_size": 10,
+      "metrics": {
+        "r_squared": 0.9735,
+        "rmse": 33.9076,
+        "mae": 31.7852,
+        "mape": 2.02
+      }
+    }
+  ]
+}

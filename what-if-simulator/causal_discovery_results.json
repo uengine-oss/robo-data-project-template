@@ -1,0 +1,994 @@
+{
+  "discovered_at": "2026-01-24T12:31:20.684058",
+  "parameters": {
+    "significance_level": 0.05,
+    "min_correlation": 0.35,
+    "max_lag": 2
+  },
+  "edges": [
+    {
+      "source": "mkt_spend",
+      "target": "brand_equity",
+      "method": "correlation+granger+partial_correlation",
+      "strength": 1.0,
+      "p_value": 0.000158,
+      "lag": 1,
+      "direction": "positive"
+    },
+    {
+      "source": "cogs",
+      "target": "price",
+      "method": "correlation+partial_correlation",
+      "strength": 1.0,
+      "p_value": 0.05,
+      "lag": 0,
+      "direction": "positive"
+    },
+    {
+      "source": "sales",
+      "target": "loyalty",
+      "method": "correlation+granger",
+      "strength": 1.0,
+      "p_value": 0.0,
+      "lag": 1,
+      "direction": "positive"
+    },
+    {
+      "source": "mkt_spend",
+      "target": "loyalty",
+      "method": "granger+partial_correlation",
+      "strength": 0.9986,
+      "p_value": 0.00028,
+      "lag": 1,
+      "direction": "negative"
+    },
+    {
+      "source": "delivery_time",
+      "target": "loyalty",
+      "method": "granger",
+      "strength": 0.9964,
+      "p_value": 9.4e-05,
+      "lag": 1,
+      "direction": "negative"
+    },
+    {
+      "source": "delivery_time",
+      "target": "csat",
+      "method": "correlation",
+      "strength": 0.9929,
+      "p_value": 0.0,
+      "lag": 0,
+      "direction": "negative"
+    },
+    {
+      "source": "service_level",
+      "target": "csat",
+      "method": "correlation",
+      "strength": 0.9916,
+      "p_value": 0.0,
+      "lag": 0,
+      "direction": "positive"
+    },
+    {
+      "source": "refund_rate",
+      "target": "csat",
+      "method": "correlation",
+      "strength": 0.9915,
+      "p_value": 0.0,
+      "lag": 0,
+      "direction": "negative"
+    },
+    {
+      "source": "fx_rate",
+      "target": "price",
+      "method": "correlation",
+      "strength": 0.9684,
+      "p_value": 0.0,
+      "lag": 0,
+      "direction": "positive"
+    },
+    {
+      "source": "csat",
+      "target": "loyalty",
+      "method": "granger",
+      "strength": 0.9141,
+      "p_value": 0.00016,
+      "lag": 1,
+      "direction": "positive"
+    },
+    {
+      "source": "fx_rate",
+      "target": "brand_equity",
+      "method": "granger",
+      "strength": 0.914,
+      "p_value": 0.000161,
+      "lag": 1,
+      "direction": "positive"
+    },
+    {
+      "source": "demand",
+      "target": "delivery_time",
+      "method": "correlation+partial_correlation",
+      "strength": 0.9072,
+      "p_value": 0.05,
+      "lag": 0,
+      "direction": "negative"
+    },
+    {
+      "source": "fx_rate",
+      "target": "cogs",
+      "method": "correlation",
+      "strength": 0.8724,
+      "p_value": 0.0,
+      "lag": 0,
+      "direction": "positive"
+    },
+    {
+      "source": "sales",
+      "target": "delivery_time",
+      "method": "correlation+partial_correlation",
+      "strength": 0.8651,
+      "p_value": 0.05,
+      "lag": 0,
+      "direction": "positive"
+    },
+    {
+      "source": "profit",
+      "target": "loyalty",
+      "method": "granger",
+      "strength": 0.8636,
+      "p_value": 0.000225,
+      "lag": 1,
+      "direction": "positive"
+    },
+    {
+      "source": "profit",
+      "target": "brand_equity",
+      "method": "correlation+granger",
+      "strength": 0.8572,
+      "p_value": 0.000648,
+      "lag": 1,
+      "direction": "positive"
+    },
+    {
+      "source": "brand_equity",
+      "target": "loyalty",
+      "method": "correlation+granger+partial_correlation",
+      "strength": 0.8524,
+      "p_value": 0.001432,
+      "lag": 1,
+      "direction": "positive"
+    },
+    {
+      "source": "sales",
+      "target": "profit",
+      "method": "correlation+partial_correlation",
+      "strength": 0.8409,
+      "p_value": 0.05,
+      "lag": 0,
+      "direction": "positive"
+    },
+    {
+      "source": "refund_rate",
+      "target": "loyalty",
+      "method": "granger",
+      "strength": 0.7975,
+      "p_value": 0.000357,
+      "lag": 1,
+      "direction": "negative"
+    },
+    {
+      "source": "loyalty",
+      "target": "brand_equity",
+      "method": "granger",
+      "strength": 0.7932,
+      "p_value": 0.000367,
+      "lag": 1,
+      "direction": "positive"
+    },
+    {
+      "source": "service_level",
+      "target": "loyalty",
+      "method": "granger",
+      "strength": 0.7893,
+      "p_value": 0.000378,
+      "lag": 1,
+      "direction": "positive"
+    },
+    {
+      "source": "price",
+      "target": "margin",
+      "method": "correlation+partial_correlation",
+      "strength": 0.7383,
+      "p_value": 0.05,
+      "lag": 0,
+      "direction": "positive"
+    },
+    {
+      "source": "fx_rate",
+      "target": "loyalty",
+      "method": "correlation+granger",
+      "strength": 0.7329,
+      "p_value": 0.001412,
+      "lag": 1,
+      "direction": "negative"
+    },
+    {
+      "source": "profit",
+      "target": "margin",
+      "method": "correlation+partial_correlation",
+      "strength": 0.7206,
+      "p_value": 0.05,
+      "lag": 0,
+      "direction": "positive"
+    },
+    {
+      "source": "fx_rate",
+      "target": "price_volatility",
+      "method": "partial_correlation",
+      "strength": 0.7084,
+      "p_value": 0.05,
+      "lag": 0,
+      "direction": "negative"
+    },
+    {
+      "source": "demand",
+      "target": "loyalty",
+      "method": "correlation+granger+partial_correlation",
+      "strength": 0.6739,
+      "p_value": 0.003988,
+      "lag": 1,
+      "direction": "positive"
+    },
+    {
+      "source": "price",
+      "target": "brand_equity",
+      "method": "granger",
+      "strength": 0.6633,
+      "p_value": 0.000946,
+      "lag": 1,
+      "direction": "positive"
+    },
+    {
+      "source": "pass_through",
+      "target": "price",
+      "method": "correlation+partial_correlation",
+      "strength": 0.6557,
+      "p_value": 0.05,
+      "lag": 0,
+      "direction": "positive"
+    },
+    {
+      "source": "service_level",
+      "target": "demand",
+      "method": "correlation+granger",
+      "strength": 0.6448,
+      "p_value": 0.000322,
+      "lag": 2,
+      "direction": "positive"
+    },
+    {
+      "source": "mkt_spend",
+      "target": "price",
+      "method": "correlation",
+      "strength": 0.6427,
+      "p_value": 2.4e-05,
+      "lag": 0,
+      "direction": "positive"
+    },
+    {
+      "source": "service_level",
+      "target": "sales",
+      "method": "correlation",
+      "strength": 0.64,
+      "p_value": 2.6e-05,
+      "lag": 0,
+      "direction": "positive"
+    },
+    {
+      "source": "mkt_spend",
+      "target": "profit",
+      "method": "correlation",
+      "strength": 0.6009,
+      "p_value": 0.000107,
+      "lag": 0,
+      "direction": "positive"
+    },
+    {
+      "source": "fx_rate",
+      "target": "mkt_spend",
+      "method": "correlation+partial_correlation",
+      "strength": 0.5803,
+      "p_value": 0.05,
+      "lag": 0,
+      "direction": "positive"
+    },
+    {
+      "source": "mkt_spend",
+      "target": "margin",
+      "method": "correlation",
+      "strength": 0.5762,
+      "p_value": 0.000235,
+      "lag": 0,
+      "direction": "positive"
+    },
+    {
+      "source": "service_level",
+      "target": "delivery_time",
+      "method": "correlation+partial_correlation",
+      "strength": 0.5744,
+      "p_value": 0.05,
+      "lag": 0,
+      "direction": "negative"
+    },
+    {
+      "source": "fx_rate",
+      "target": "profit",
+      "method": "correlation+granger",
+      "strength": 0.5631,
+      "p_value": 0.004413,
+      "lag": 1,
+      "direction": "positive"
+    },
+    {
+      "source": "price",
+      "target": "loyalty",
+      "method": "correlation+granger",
+      "strength": 0.538,
+      "p_value": 0.005269,
+      "lag": 1,
+      "direction": "negative"
+    },
+    {
+      "source": "margin",
+      "target": "brand_equity",
+      "method": "correlation+granger",
+      "strength": 0.5357,
+      "p_value": 0.005354,
+      "lag": 1,
+      "direction": "positive"
+    },
+    {
+      "source": "fx_rate",
+      "target": "pass_through",
+      "method": "correlation",
+      "strength": 0.5231,
+      "p_value": 0.001063,
+      "lag": 0,
+      "direction": "positive"
+    },
+    {
+      "source": "cogs",
+      "target": "demand",
+      "method": "correlation+partial_correlation",
+      "strength": 0.5196,
+      "p_value": 0.05,
+      "lag": 0,
+      "direction": "negative"
+    },
+    {
+      "source": "cogs",
+      "target": "margin",
+      "method": "partial_correlation",
+      "strength": 0.51,
+      "p_value": 0.05,
+      "lag": 0,
+      "direction": "negative"
+    },
+    {
+      "source": "sales",
+      "target": "brand_equity",
+      "method": "correlation+granger",
+      "strength": 0.5086,
+      "p_value": 0.001263,
+      "lag": 2,
+      "direction": "positive"
+    },
+    {
+      "source": "sales",
+      "target": "margin",
+      "method": "correlation",
+      "strength": 0.5084,
+      "p_value": 0.001544,
+      "lag": 0,
+      "direction": "positive"
+    },
+    {
+      "source": "margin",
+      "target": "loyalty",
+      "method": "granger",
+      "strength": 0.5026,
+      "p_value": 0.003346,
+      "lag": 1,
+      "direction": "negative"
+    },
+    {
+      "source": "pass_through",
+      "target": "mkt_spend",
+      "method": "correlation",
+      "strength": 0.5,
+      "p_value": 0.001902,
+      "lag": 0,
+      "direction": "positive"
+    },
+    {
+      "source": "pass_through",
+      "target": "margin",
+      "method": "correlation+partial_correlation",
+      "strength": 0.4869,
+      "p_value": 0.05,
+      "lag": 0,
+      "direction": "negative"
+    },
+    {
+      "source": "sales",
+      "target": "csat",
+      "method": "correlation+partial_correlation",
+      "strength": 0.481,
+      "p_value": 0.05,
+      "lag": 0,
+      "direction": "positive"
+    },
+    {
+      "source": "delivery_time",
+      "target": "demand",
+      "method": "granger",
+      "strength": 0.4741,
+      "p_value": 0.000678,
+      "lag": 2,
+      "direction": "negative"
+    },
+    {
+      "source": "refund_rate",
+      "target": "delivery_time",
+      "method": "correlation+partial_correlation",
+      "strength": 0.4687,
+      "p_value": 0.05,
+      "lag": 0,
+      "direction": "positive"
+    },
+    {
+      "source": "delivery_time",
+      "target": "brand_equity",
+      "method": "granger",
+      "strength": 0.4679,
+      "p_value": 0.004464,
+      "lag": 1,
+      "direction": "negative"
+    },
+    {
+      "source": "profit",
+      "target": "csat",
+      "method": "partial_correlation",
+      "strength": 0.4678,
+      "p_value": 0.05,
+      "lag": 0,
+      "direction": "negative"
+    },
+    {
+      "source": "refund_rate",
+      "target": "demand",
+      "method": "granger",
+      "strength": 0.4661,
+      "p_value": 0.000747,
+      "lag": 2,
+      "direction": "negative"
+    },
+    {
+      "source": "refund_rate",
+      "target": "brand_equity",
+      "method": "granger",
+      "strength": 0.4609,
+      "p_value": 0.004735,
+      "lag": 1,
+      "direction": "negative"
+    },
+    {
+      "source": "csat",
+      "target": "demand",
+      "method": "granger",
+      "strength": 0.4601,
+      "p_value": 0.000804,
+      "lag": 2,
+      "direction": "positive"
+    },
+    {
+      "source": "demand",
+      "target": "profit",
+      "method": "granger+partial_correlation",
+      "strength": 0.46,
+      "p_value": 0.009276,
+      "lag": 1,
+      "direction": "positive"
+    },
+    {
+      "source": "cogs",
+      "target": "sales",
+      "method": "partial_correlation",
+      "strength": 0.4589,
+      "p_value": 0.05,
+      "lag": 0,
+      "direction": "positive"
+    },
+    {
+      "source": "pass_through",
+      "target": "loyalty",
+      "method": "granger",
+      "strength": 0.45,
+      "p_value": 0.005193,
+      "lag": 1,
+      "direction": "positive"
+    },
+    {
+      "source": "margin",
+      "target": "price_volatility",
+      "method": "granger",
+      "strength": 0.4447,
+      "p_value": 0.005437,
+      "lag": 1,
+      "direction": "negative"
+    },
+    {
+      "source": "pass_through",
+      "target": "cogs",
+      "method": "partial_correlation",
+      "strength": 0.4438,
+      "p_value": 0.05,
+      "lag": 0,
+      "direction": "negative"
+    },
+    {
+      "source": "price",
+      "target": "profit",
+      "method": "correlation+granger",
+      "strength": 0.4334,
+      "p_value": 0.011319,
+      "lag": 1,
+      "direction": "positive"
+    },
+    {
+      "source": "demand",
+      "target": "refund_rate",
+      "method": "correlation+partial_correlation",
+      "strength": 0.4304,
+      "p_value": 0.05,
+      "lag": 0,
+      "direction": "positive"
+    },
+    {
+      "source": "mkt_spend",
+      "target": "cogs",
+      "method": "correlation",
+      "strength": 0.4271,
+      "p_value": 0.009375,
+      "lag": 0,
+      "direction": "positive"
+    },
+    {
+      "source": "pass_through",
+      "target": "profit",
+      "method": "correlation+granger",
+      "strength": 0.4187,
+      "p_value": 0.012655,
+      "lag": 1,
+      "direction": "positive"
+    },
+    {
+      "source": "service_level",
+      "target": "refund_rate",
+      "method": "correlation+partial_correlation",
+      "strength": 0.4177,
+      "p_value": 0.05,
+      "lag": 0,
+      "direction": "negative"
+    },
+    {
+      "source": "service_level",
+      "target": "brand_equity",
+      "method": "granger",
+      "strength": 0.4127,
+      "p_value": 0.007166,
+      "lag": 1,
+      "direction": "positive"
+    },
+    {
+      "source": "csat",
+      "target": "brand_equity",
+      "method": "granger",
+      "strength": 0.4051,
+      "p_value": 0.007653,
+      "lag": 1,
+      "direction": "positive"
+    },
+    {
+      "source": "mkt_spend",
+      "target": "price_volatility",
+      "method": "partial_correlation",
+      "strength": 0.3982,
+      "p_value": 0.05,
+      "lag": 0,
+      "direction": "positive"
+    },
+    {
+      "source": "mkt_spend",
+      "target": "fx_rate",
+      "method": "granger",
+      "strength": 0.3925,
+      "p_value": 0.001885,
+      "lag": 2,
+      "direction": "positive"
+    },
+    {
+      "source": "profit",
+      "target": "delivery_time",
+      "method": "partial_correlation",
+      "strength": 0.3906,
+      "p_value": 0.05,
+      "lag": 0,
+      "direction": "negative"
+    },
+    {
+      "source": "cogs",
+      "target": "csat",
+      "method": "partial_correlation",
+      "strength": 0.3845,
+      "p_value": 0.05,
+      "lag": 0,
+      "direction": "negative"
+    },
+    {
+      "source": "demand",
+      "target": "csat",
+      "method": "correlation+partial_correlation",
+      "strength": 0.3748,
+      "p_value": 0.05,
+      "lag": 0,
+      "direction": "negative"
+    },
+    {
+      "source": "sales",
+      "target": "refund_rate",
+      "method": "correlation+partial_correlation",
+      "strength": 0.3699,
+      "p_value": 0.05,
+      "lag": 0,
+      "direction": "negative"
+    },
+    {
+      "source": "pass_through",
+      "target": "brand_equity",
+      "method": "correlation+granger",
+      "strength": 0.3632,
+      "p_value": 0.006351,
+      "lag": 2,
+      "direction": "positive"
+    },
+    {
+      "source": "pass_through",
+      "target": "price_volatility",
+      "method": "granger",
+      "strength": 0.3368,
+      "p_value": 0.014143,
+      "lag": 1,
+      "direction": "negative"
+    },
+    {
+      "source": "cogs",
+      "target": "profit",
+      "method": "granger+partial_correlation",
+      "strength": 0.3363,
+      "p_value": 0.024123,
+      "lag": 1,
+      "direction": "positive"
+    },
+    {
+      "source": "cogs",
+      "target": "brand_equity",
+      "method": "granger",
+      "strength": 0.3358,
+      "p_value": 0.014271,
+      "lag": 1,
+      "direction": "negative"
+    },
+    {
+      "source": "demand",
+      "target": "sales",
+      "method": "correlation+granger+partial_correlation",
+      "strength": 0.3351,
+      "p_value": 0.036088,
+      "lag": 1,
+      "direction": "positive"
+    },
+    {
+      "source": "fx_rate",
+      "target": "demand",
+      "method": "correlation+granger",
+      "strength": 0.3328,
+      "p_value": 0.024814,
+      "lag": 1,
+      "direction": "negative"
+    },
+    {
+      "source": "pass_through",
+      "target": "sales",
+      "method": "correlation+granger",
+      "strength": 0.3264,
+      "p_value": 0.009858,
+      "lag": 2,
+      "direction": "positive"
+    },
+    {
+      "source": "profit",
+      "target": "price_volatility",
+      "method": "granger",
+      "strength": 0.317,
+      "p_value": 0.016999,
+      "lag": 1,
+      "direction": "negative"
+    },
+    {
+      "source": "mkt_spend",
+      "target": "sales",
+      "method": "correlation+granger",
+      "strength": 0.3127,
+      "p_value": 0.029224,
+      "lag": 1,
+      "direction": "positive"
+    },
+    {
+      "source": "price",
+      "target": "demand",
+      "method": "correlation+granger",
+      "strength": 0.3029,
+      "p_value": 0.031678,
+      "lag": 1,
+      "direction": "negative"
+    },
+    {
+      "source": "loyalty",
+      "target": "profit",
+      "method": "granger",
+      "strength": 0.302,
+      "p_value": 0.019586,
+      "lag": 1,
+      "direction": "positive"
+    },
+    {
+      "source": "fx_rate",
+      "target": "sales",
+      "method": "granger",
+      "strength": 0.2921,
+      "p_value": 0.007383,
+      "lag": 2,
+      "direction": "positive"
+    },
+    {
+      "source": "fx_rate",
+      "target": "margin",
+      "method": "correlation+granger",
+      "strength": 0.2878,
+      "p_value": 0.035916,
+      "lag": 1,
+      "direction": "positive"
+    },
+    {
+      "source": "price_volatility",
+      "target": "demand",
+      "method": "granger",
+      "strength": 0.2827,
+      "p_value": 0.008439,
+      "lag": 2,
+      "direction": "negative"
+    },
+    {
+      "source": "price_volatility",
+      "target": "cogs",
+      "method": "granger",
+      "strength": 0.264,
+      "p_value": 0.011079,
+      "lag": 2,
+      "direction": "positive"
+    },
+    {
+      "source": "price",
+      "target": "sales",
+      "method": "granger",
+      "strength": 0.2621,
+      "p_value": 0.028799,
+      "lag": 1,
+      "direction": "positive"
+    },
+    {
+      "source": "brand_equity",
+      "target": "sales",
+      "method": "granger",
+      "strength": 0.2611,
+      "p_value": 0.011571,
+      "lag": 2,
+      "direction": "positive"
+    },
+    {
+      "source": "delivery_time",
+      "target": "refund_rate",
+      "method": "granger",
+      "strength": 0.2535,
+      "p_value": 0.031332,
+      "lag": 1,
+      "direction": "positive"
+    },
+    {
+      "source": "loyalty",
+      "target": "sales",
+      "method": "granger",
+      "strength": 0.2486,
+      "p_value": 0.032915,
+      "lag": 1,
+      "direction": "positive"
+    },
+    {
+      "source": "demand",
+      "target": "brand_equity",
+      "method": "correlation+granger+partial_correlation",
+      "strength": 0.2482,
+      "p_value": 0.041914,
+      "lag": 2,
+      "direction": "positive"
+    },
+    {
+      "source": "fx_rate",
+      "target": "refund_rate",
+      "method": "granger",
+      "strength": 0.2482,
+      "p_value": 0.013995,
+      "lag": 2,
+      "direction": "negative"
+    },
+    {
+      "source": "profit",
+      "target": "demand",
+      "method": "granger",
+      "strength": 0.2429,
+      "p_value": 0.034838,
+      "lag": 1,
+      "direction": "positive"
+    },
+    {
+      "source": "fx_rate",
+      "target": "service_level",
+      "method": "granger",
+      "strength": 0.2334,
+      "p_value": 0.017469,
+      "lag": 2,
+      "direction": "positive"
+    },
+    {
+      "source": "price",
+      "target": "refund_rate",
+      "method": "granger+partial_correlation",
+      "strength": 0.2298,
+      "p_value": 0.033439,
+      "lag": 2,
+      "direction": "negative"
+    },
+    {
+      "source": "cogs",
+      "target": "loyalty",
+      "method": "correlation+granger",
+      "strength": 0.2207,
+      "p_value": 0.037682,
+      "lag": 2,
+      "direction": "negative"
+    },
+    {
+      "source": "delivery_time",
+      "target": "service_level",
+      "method": "granger",
+      "strength": 0.2126,
+      "p_value": 0.047384,
+      "lag": 1,
+      "direction": "negative"
+    },
+    {
+      "source": "margin",
+      "target": "demand",
+      "method": "granger",
+      "strength": 0.2105,
+      "p_value": 0.048446,
+      "lag": 1,
+      "direction": "positive"
+    },
+    {
+      "source": "fx_rate",
+      "target": "csat",
+      "method": "granger",
+      "strength": 0.1923,
+      "p_value": 0.033008,
+      "lag": 2,
+      "direction": "positive"
+    },
+    {
+      "source": "sales",
+      "target": "demand",
+      "method": "granger",
+      "strength": 0.1901,
+      "p_value": 0.034148,
+      "lag": 2,
+      "direction": "positive"
+    },
+    {
+      "source": "fx_rate",
+      "target": "delivery_time",
+      "method": "granger",
+      "strength": 0.1821,
+      "p_value": 0.038797,
+      "lag": 2,
+      "direction": "negative"
+    },
+    {
+      "source": "service_level",
+      "target": "cogs",
+      "method": "granger",
+      "strength": 0.1792,
+      "p_value": 0.040623,
+      "lag": 2,
+      "direction": "positive"
+    }
+  ],
+  "summary": {
+    "total_edges": 103,
+    "strong_edges": 45,
+    "root_causes": [
+      [
+        "fx_rate",
+        15
+      ],
+      [
+        "mkt_spend",
+        9
+      ],
+      [
+        "pass_through",
+        9
+      ],
+      [
+        "cogs",
+        8
+      ],
+      [
+        "sales",
+        8
+      ]
+    ],
+    "final_effects": [
+      [
+        "brand_equity",
+        14
+      ],
+      [
+        "loyalty",
+        14
+      ],
+      [
+        "demand",
+        11
+      ],
+      [
+        "sales",
+        9
+      ],
+      [
+        "csat",
+        8
+      ]
+    ],
+    "methods_breakdown": {
+      "correlation": 52,
+      "granger": 65,
+      "partial_correlation": 34
+    },
+    "direction_breakdown": {
+      "positive": 66,
+      "negative": 37
+    }
+  }
+}

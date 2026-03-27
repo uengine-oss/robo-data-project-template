@@ -1,0 +1,34 @@
+# What-If Simulator API Configuration
+# =====================================
+# 파일명을 .env로 변경하여 사용하세요
+
+# API Server
+WHATIF_API_HOST=0.0.0.0
+WHATIF_API_PORT=8001
+
+# MySQL (물리 계층 데이터베이스)
+WHATIF_MYSQL_HOST=localhost
+WHATIF_MYSQL_PORT=3307
+WHATIF_MYSQL_DATABASE=sample_db
+WHATIF_MYSQL_USER=sampleuser
+WHATIF_MYSQL_PASSWORD=samplepass123
+
+# Neo4j
+WHATIF_NEO4J_URI=bolt://localhost:7687
+WHATIF_NEO4J_USER=neo4j
+WHATIF_NEO4J_PASSWORD=12345analyzer
+WHATIF_NEO4J_DATABASE=neo4j
+
+# MindsDB
+WHATIF_MINDSDB_URL=http://127.0.0.1:47334
+
+# Text2SQL Service
+WHATIF_TEXT2SQL_URL=http://localhost:8000
+
+# OpenAI (LLM Literacy)
+OPENAI_API_KEY=sk-your-openai-api-key
+
+# Validation Settings
+WHATIF_TEST_RATIO=0.2
+WHATIF_SIGNIFICANCE_LEVEL=0.05
+WHATIF_MIN_CORRELATION=0.35

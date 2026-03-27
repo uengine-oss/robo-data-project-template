@@ -1,0 +1,140 @@
+# Docker 환경용 설정
+# 컨테이너 이름으로 서비스 연결
+
+spring:
+  cloud:
+    gateway:
+      routes:
+        # ============================================
+        # API Gateway Prefix Routes (/api/gateway/**)
+        # ============================================
+        - id: api-gateway-antlr
+          uri: http://robo-antlr-parser:8081
+          predicates:
+            - Path=/api/gateway/antlr/**
+          filters:
+            - RewritePath=/api/gateway/antlr/(?<segment>.*), /antlr/$\{segment}
+            - RemoveRequestHeader=Origin
+        
+        - id: api-gateway-robo
+          uri: http://robo-analyzer:5502
+          predicates:
+            - Path=/api/gateway/robo/**
+          filters:
+            - RewritePath=/api/gateway/robo/(?<segment>.*), /robo/$\{segment}
+            - RemoveRequestHeader=Origin
+        
+        - id: api-gateway-text2sql
+          uri: http://robo-text2sql:8000
+          predicates:
+            - Path=/api/gateway/text2sql/**
+          filters:
+            - RewritePath=/api/gateway/text2sql/(?<segment>.*), /text2sql/$\{segment}
+            - RemoveRequestHeader=Origin
+        
+        # ============================================
+        # Direct API Routes
+        # ============================================
+        - id: antlr-service
+          uri: http://robo-antlr-parser:8081
+          predicates:
+            - Path=/antlr/**
+          filters:
+            - RemoveRequestHeader=Origin
+        
+        - id: robo-analyzer-service
+          uri: http://robo-analyzer:5502
+          predicates:
+            - Path=/robo/**
+          filters:
+            - RemoveRequestHeader=Origin
+        
+        - id: text2sql-service
+          uri: http://robo-text2sql:8000
+          predicates:
+            - Path=/text2sql/**
+          filters:
+            - RemoveRequestHeader=Origin
+        
+        # ============================================
+        # Data Fabric (데이터소스 관리)
+        # ============================================
+        - id: api-gateway-data-fabric
+          uri: http://robo-data-fabric:8004
+          predicates:
+            - Path=/api/gateway/data-fabric/**
+          filters:
+            - RewritePath=/api/gateway/data-fabric(?<segment>.*), $\{segment}
+            - RemoveRequestHeader=Origin
+        
+        - id: datasources-service
+          uri: http://robo-data-fabric:8004
+          predicates:
+            - Path=/api/datasources/**
+          filters:
+            - RemoveRequestHeader=Origin
+        
+        # ============================================
+        # Domain Layer (Ontology)
+        # ============================================
+        - id: api-gateway-ontology
+          uri: http://robo-domain-layer:8002
+          predicates:
+            - Path=/api/gateway/ontology/**
+          filters:
+            - RewritePath=/api/gateway/ontology/(?<segment>.*), /ontology/$\{segment}
+            - RemoveRequestHeader=Origin
+        
+        - id: ontology-service
+          uri: http://robo-domain-layer:8002
+          predicates:
+            - Path=/ontology/**
+          filters:
+            - RemoveRequestHeader=Origin
+        
+        # ============================================
+        # Agent Scheduler (감시 에이전트)
+        # ============================================
+        - id: api-gateway-agent-scheduler
+          uri: http://robo-agent-scheduler:8089
+          predicates:
+            - Path=/api/gateway/agent-scheduler/**
+          filters:
+            - RewritePath=/api/gateway/agent-scheduler/(?<segment>.*), /$\{segment}
+            - RemoveRequestHeader=Origin
+        
+        - id: agent-scheduler-service
+          uri: http://robo-agent-scheduler:8089
+          predicates:
+            - Path=/agent-scheduler/**
+          filters:
+            - RewritePath=/agent-scheduler/(?<segment>.*), /$\{segment}
+            - RemoveRequestHeader=Origin
+        
+        # ============================================
+        # Data Secure Guard API (RBAC 보안 관리)
+        # ============================================
+        - id: api-gateway-security
+          uri: http://robo-security-api:8006
+          predicates:
+            - Path=/api/gateway/security/**
+          filters:
+            - RewritePath=/api/gateway/security/(?<segment>.*), /api/security/$\{segment}
+            - RemoveRequestHeader=Origin
+        
+        - id: security-api-direct
+          uri: http://robo-security-api:8006
+          predicates:
+            - Path=/api/security/**
+          filters:
+            - RemoveRequestHeader=Origin
+        
+        # ============================================
+        # Frontend (Nginx)
+        # ============================================
+        - id: frontend
+          uri: http://robo-frontend:80
+          predicates:
+            - Path=/**
+          filters:
+            - RemoveRequestHeader=Origin

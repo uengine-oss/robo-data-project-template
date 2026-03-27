@@ -1,0 +1,39 @@
+[submodule "antlr-code-parser"]
+	path = antlr-code-parser
+	url = https://github.com/uengine-oss/antlr-code-parser.git
+[submodule "data-fabric"]
+	path = data-fabric
+	url = https://github.com/jinyoung/robo-data-fabric.git
+[submodule "data-secure-guard"]
+	path = data-secure-guard
+	url = https://github.com/uengine-oss/robo-data-security-guard.git
+[submodule "domain-layer"]
+	path = domain-layer
+	url = https://github.com/uengine-oss/robo-insight-domain-layer.git
+[submodule "infra"]
+	path = infra
+	url = https://github.com/uengine-oss/robo-data-platform.git
+[submodule "langchain-text2sql"]
+	path = langchain-text2sql
+	url = https://github.com/jinyoung/langchain-t2sql.git
+[submodule "neo4j-text2sql"]
+	path = neo4j-text2sql
+	url = https://github.com/uengine-oss/neo4j-text2sql.git
+[submodule "process-gpt-bpmn-extractor"]
+	path = process-gpt-bpmn-extractor
+	url = https://github.com/uengine-oss/process-gpt-bpmn-extractor.git
+[submodule "robo-analyzer"]
+	path = robo-analyzer
+	url = https://github.com/uengine-oss/robo-analyzer.git
+[submodule "robo-analyzer-vue3"]
+	path = robo-analyzer-vue3
+	url = https://github.com/uengine-oss/robo-analyzer-vue3.git
+[submodule "data-platform-olap"]
+	path = data-platform-olap
+	url = https://github.com/uengine-oss/data-platform-olap.git
+[submodule "agent-scheduler"]
+	path = agent-scheduler
+	url = https://github.com/uengine-oss/robo-data-agent-scheduler.git
+[submodule "node-local-agent-scheduler"]
+	path = node-local-agent-scheduler
+	url = https://github.com/uengine-oss/robo-node-local-agent-scheduler.git

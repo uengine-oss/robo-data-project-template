@@ -1,0 +1,100 @@
+# ============================================
+# Robo Analytics Platform - Root .gitignore
+# ============================================
+
+# === Python ===
+__pycache__/
+*.py[cod]
+*$py.class
+*.so
+.venv/
+venv/
+.env
+*.egg-info/
+dist/
+build/
+*.egg
+
+# === Node.js ===
+node_modules/
+npm-debug.log*
+yarn-error.log*
+
+# === Java / Maven ===
+target/
+*.class
+*.jar
+!antlr-code-parser/antlr-*.jar
+
+# === IDEs ===
+.idea/
+.vscode/
+*.swp
+*.swo
+*~
+.DS_Store
+
+# === Logs ===
+*.log
+log/
+
+# === Data & Generated (large files) ===
+data/analysis/
+data/source/
+data/ddl/
+generated_data/
+uploads/
+*.tar.gz
+
+# === Large folders (samples, docs, installers) ===
+sample/
+docs/
+backup/
+rwis-installer/
+
+# === Large files (>100MB, GitHub limit) ===
+# SQL dump/insert files
+sample/water-plant/output/rditag_sql/
+rwis-installer/sql/rditag/
+rwis-installer/sql/dml/RDR01MI_*.sql
+rwis-installer/sql/dml/RDF01HH_TB_INSERT.sql
+rwis-installer/sql/dml/RDR15MI_TB_INSERT.sql
+
+# Large docs & dumps
+docs/충주정수장*
+backup/sample/water-plant/neo4j*dump/
+backup/sample/water-plant/output.zip
+sample/water-plant/neo4j*dump/
+
+# === Build artifacts ===
+dist/
+*.pyc
+
+# === Cache ===
+.cache/
+.llm_cache.db
+.pytest_cache/
+
+# === Environment ===
+.env
+.env.*
+!.env.example
+!env.example
+
+# === OS ===
+.DS_Store
+Thumbs.db
+
+# === Submodules (managed separately) ===
+# These are registered as git submodules - do NOT add them here
+# antlr-code-parser/
+# api-gateway/
+# data-fabric/
+# data-secure-guard/
+# domain-layer/
+# infra/
+# langchain-text2sql/
+# neo4j-text2sql/
+# process-gpt-bpmn-extractor/
+# robo-analyzer/
+# robo-analyzer-vue3/
