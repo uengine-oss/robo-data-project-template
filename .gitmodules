@@ -34,3 +34,6 @@
 [submodule "node-local-agent-scheduler"]
 	path = node-local-agent-scheduler
 	url = https://github.com/uengine-oss/robo-node-local-agent-scheduler.git
+[submodule "robo-data-catalog"]
+	path = robo-data-catalog
+	url = https://github.com/uengine-oss/robo-data-catalog.git
