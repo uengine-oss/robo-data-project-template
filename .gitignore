@@ -51,6 +51,7 @@ sample/
 docs/
 backup/
 rwis-installer/
+langchain-text2sql/
 
 # === Large files (>100MB, GitHub limit) ===
 # SQL dump/insert files

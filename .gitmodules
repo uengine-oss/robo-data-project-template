@@ -13,9 +13,6 @@
 [submodule "infra"]
 	path = infra
 	url = https://github.com/uengine-oss/robo-data-platform.git
-[submodule "langchain-text2sql"]
-	path = langchain-text2sql
-	url = https://github.com/jinyoung/langchain-t2sql.git
 [submodule "neo4j-text2sql"]
 	path = neo4j-text2sql
 	url = https://github.com/uengine-oss/neo4j-text2sql.git
