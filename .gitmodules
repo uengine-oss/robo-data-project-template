@@ -37,3 +37,6 @@
 [submodule "robo-data-catalog"]
 	path = robo-data-catalog
 	url = https://github.com/uengine-oss/robo-data-catalog.git
+[submodule "robo-data-glossary"]
+	path = robo-data-glossary
+	url = https://github.com/uengine-oss/robo-data-glossary.git
