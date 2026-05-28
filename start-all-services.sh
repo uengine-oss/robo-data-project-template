@@ -60,9 +60,6 @@ print_status "ANTLR Parser 시작됨 (PID: $ANTLR_PID)"
 echo ""
 print_info "3. ROBO Analyzer 시작 (포트 5502)..."
 cd "$SCRIPT_DIR/robo-data-analyzer"
-if [ -d ".venv" ]; then
-  source .venv/bin/activate
-fi
 uvicorn main:app --host 0.0.0.0 --port 5502 > /tmp/robo-data-analyzer.log 2>&1 &
 ROBO_PID=$!
 print_status "ROBO Analyzer 시작됨 (PID: $ROBO_PID)"
@@ -100,6 +97,30 @@ uvicorn api.main:app --host 0.0.0.0 --port 8001 > /tmp/architect.log 2>&1 &
 ARCH_PID=$!
 print_status "ROBO Architect 시작됨 (PID: $ARCH_PID)"
 
+# 7. ROBO Data Catalog (FastAPI)
+echo ""
+print_info "7. ROBO Data Catalog 시작 (포트 5503)..."
+cd "$SCRIPT_DIR/robo-data-catalog"
+uvicorn main:app --host 0.0.0.0 --port 5503 > /tmp/robo-data-catalog.log 2>&1 &
+CATALOG_PID=$!
+print_status "ROBO Data Catalog 시작됨 (PID: $CATALOG_PID)"
+
+# 8. ROBO Data Glossary (FastAPI)
+echo ""
+print_info "8. ROBO Data Glossary 시작 (포트 5504)..."
+cd "$SCRIPT_DIR/robo-data-glossary"
+uvicorn main:app --host 0.0.0.0 --port 5504 > /tmp/robo-data-glossary.log 2>&1 &
+GLOSSARY_PID=$!
+print_status "ROBO Data Glossary 시작됨 (PID: $GLOSSARY_PID)"
+
+# 9. ROBO Data Frontend (Vite)
+echo ""
+print_info "9. ROBO Data Frontend 시작 (포트 3000)..."
+cd "$SCRIPT_DIR/robo-data-frontend"
+npm run dev -- --port 3000 > /tmp/robo-data-frontend.log 2>&1 &
+FRONTEND_PID=$!
+print_status "ROBO Data Frontend 시작됨 (PID: $FRONTEND_PID)"
+
 sleep 2
 
 echo ""
@@ -109,15 +130,21 @@ echo "🚀 모든 서비스가 시작되었습니다!"
 echo ""
 echo "  API Gateway:      http://localhost:9000"
 echo "  ANTLR Parser:     http://localhost:8081 (via /antlr/*)"
-echo "  ROBO Analyzer:    http://localhost:5502 (via /robo/*)"
-echo "  Text2SQL:         http://localhost:8000 (via /text2sql/*)"
-echo "  OLAP:             http://localhost:8002 (via /olap/*)"
-echo "  Architect:        http://localhost:8001 (via /architect/*)"
+echo "  ROBO Data Analyzer:  http://localhost:5502 (via /robo/analyze/*, /robo/pipeline/*)"
+echo "  ROBO Data Catalog:   http://localhost:5503 (via /robo/glossary/*, /robo/business-calendar/*)"
+echo "  ROBO Data Glossary:  http://localhost:5504 (via /robo/*)"
+echo "  ROBO Data Frontend:  http://localhost:3000 (via /**)"
+echo "  Text2SQL:            http://localhost:8000 (via /text2sql/*)"
+echo "  OLAP:                http://localhost:8002 (via /olap/*)"
+echo "  Architect:           http://localhost:8001 (via /architect/*)"
 echo ""
 echo "📝 로그 파일:"
 echo "  /tmp/api-gateway.log"
 echo "  /tmp/antlr-parser.log"
 echo "  /tmp/robo-data-analyzer.log"
+echo "  /tmp/robo-data-catalog.log"
+echo "  /tmp/robo-data-glossary.log"
+echo "  /tmp/robo-data-frontend.log"
 echo "  /tmp/text2sql.log"
 echo "  /tmp/olap.log"
 echo "  /tmp/architect.log"
@@ -128,7 +155,7 @@ echo "━━━━━━━━━━━━━━━━━━━━━━━━�
 echo ""
 
 # PID 저장
-echo "$GATEWAY_PID $ANTLR_PID $ROBO_PID $T2SQL_PID $OLAP_PID $ARCH_PID" > /tmp/robo-services.pids
+echo "$GATEWAY_PID $ANTLR_PID $ROBO_PID $T2SQL_PID $OLAP_PID $ARCH_PID $CATALOG_PID $GLOSSARY_PID $FRONTEND_PID" > /tmp/robo-services.pids
 print_info "PID 저장됨: /tmp/robo-services.pids"
 echo ""
 

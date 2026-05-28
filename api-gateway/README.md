@@ -36,7 +36,10 @@ Spring Cloud Gateway를 사용한 중앙 API 게이트웨이입니다.
 | 경로 패턴 | 대상 서비스 | 포트 | 설명 |
 |-----------|-------------|------|------|
 | `/antlr/**` | ANTLR Parser | 8081 | 소스코드 파싱 (Java/Spring Boot) |
-| `/robo/**` | ROBO Analyzer | 5502 | 레거시 코드 분석 |
+| `/robo/analyze/**`, `/robo/pipeline/**` | ROBO Data Analyzer | 5502 | 코드 분석 (Python/FastAPI) |
+| `/robo/glossary/**`, `/robo/business-calendar/**` | ROBO Data Catalog | 5503 | 데이터 카탈로그 (Python/FastAPI) |
+| `/robo/**` | ROBO Data Glossary | 5504 | 용어 사전 (Python/FastAPI) |
+| `/**` (fallback) | ROBO Data Frontend | 3000 | 프론트엔드 (Vue3/Vite) |
 | `/text2sql/**` | Text2SQL | 8000 | 자연어 → SQL 변환 |
 | `/olap/**` | Data Platform OLAP | 8002 | ETL/OLAP 서비스 |
 | `/architect/**` | ROBO Architect | 8001 | 아키텍처 분석 |

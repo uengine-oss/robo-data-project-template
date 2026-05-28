@@ -32,8 +32,17 @@ lsof -ti :9000 | xargs kill -9 2>/dev/null && echo "  [✓] 포트 9000 (API Gat
 # ANTLR Parser (8081)
 lsof -ti :8081 | xargs kill -9 2>/dev/null && echo "  [✓] 포트 8081 (ANTLR Parser) 종료"
 
-# ROBO Analyzer (5502)
-lsof -ti :5502 | xargs kill -9 2>/dev/null && echo "  [✓] 포트 5502 (ROBO Analyzer) 종료"
+# ROBO Data Analyzer (5502)
+lsof -ti :5502 | xargs kill -9 2>/dev/null && echo "  [✓] 포트 5502 (ROBO Data Analyzer) 종료"
+
+# ROBO Data Catalog (5503)
+lsof -ti :5503 | xargs kill -9 2>/dev/null && echo "  [✓] 포트 5503 (ROBO Data Catalog) 종료"
+
+# ROBO Data Glossary (5504)
+lsof -ti :5504 | xargs kill -9 2>/dev/null && echo "  [✓] 포트 5504 (ROBO Data Glossary) 종료"
+
+# ROBO Data Frontend (3000)
+lsof -ti :3000 | xargs kill -9 2>/dev/null && echo "  [✓] 포트 3000 (ROBO Data Frontend) 종료"
 
 # Text2SQL (8000)
 lsof -ti :8000 | xargs kill -9 2>/dev/null && echo "  [✓] 포트 8000 (Text2SQL) 종료"
