@@ -97,5 +97,8 @@ Thumbs.db
 # langchain-text2sql/
 # neo4j-text2sql/
 # process-gpt-bpmn-extractor/
-# robo-analyzer/
+# robo-data-analyzer/
 # robo-analyzer-vue3/
+# robo-data-catalog/
+# robo-data-glossary/
+# robo-data-frontend/

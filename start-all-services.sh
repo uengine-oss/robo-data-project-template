@@ -59,11 +59,11 @@ print_status "ANTLR Parser 시작됨 (PID: $ANTLR_PID)"
 # 3. ROBO Analyzer (FastAPI)
 echo ""
 print_info "3. ROBO Analyzer 시작 (포트 5502)..."
-cd "$SCRIPT_DIR/robo-analyzer"
+cd "$SCRIPT_DIR/robo-data-analyzer"
 if [ -d ".venv" ]; then
   source .venv/bin/activate
 fi
-uvicorn main:app --host 0.0.0.0 --port 5502 > /tmp/robo-analyzer.log 2>&1 &
+uvicorn main:app --host 0.0.0.0 --port 5502 > /tmp/robo-data-analyzer.log 2>&1 &
 ROBO_PID=$!
 print_status "ROBO Analyzer 시작됨 (PID: $ROBO_PID)"
 
@@ -117,7 +117,7 @@ echo ""
 echo "📝 로그 파일:"
 echo "  /tmp/api-gateway.log"
 echo "  /tmp/antlr-parser.log"
-echo "  /tmp/robo-analyzer.log"
+echo "  /tmp/robo-data-analyzer.log"
 echo "  /tmp/text2sql.log"
 echo "  /tmp/olap.log"
 echo "  /tmp/architect.log"

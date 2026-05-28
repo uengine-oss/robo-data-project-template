@@ -16,7 +16,10 @@ Working directory: /Users/uengine/robo-analyz
 |------|---------|-----------------|-----|
 | 9000 | API Gateway | `cd /Users/uengine/robo-analyz/api-gateway && ./mvnw spring-boot:run` | /tmp/api-gateway.log |
 | 8081 | ANTLR Parser | `cd /Users/uengine/robo-analyz/antlr-code-parser && ./mvnw spring-boot:run` | /tmp/antlr-parser.log |
-| 5502 | ROBO Analyzer | `cd /Users/uengine/robo-analyz/robo-analyzer && source .venv/bin/activate && uvicorn main:app --host 0.0.0.0 --port 5502` | /tmp/robo-analyzer.log |
+| 5502 | ROBO Analyzer | `cd <template>/robo-data-analyzer && source .venv/bin/activate && uvicorn main:app --host 0.0.0.0 --port 5502` | /tmp/robo-data-analyzer.log |
+| 5503 | ROBO Data Catalog | `cd <template>/robo-data-catalog && source .venv/bin/activate && uvicorn main:app --host 0.0.0.0 --port 5503` | /tmp/robo-data-catalog.log |
+| 5504 | ROBO Data Glossary | `cd <template>/robo-data-glossary && source .venv/bin/activate && uvicorn main:app --host 0.0.0.0 --port 5504` | /tmp/robo-data-glossary.log |
+| 3000 | ROBO Data Frontend | `cd <template>/robo-data-frontend && npm run dev -- --port 3000` | /tmp/robo-data-frontend.log |
 | 8000 | Neo4j Text2SQL | `cd /Users/uengine/robo-analyz/neo4j-text2sql && uv run python main.py` | /tmp/neo4j-text2sql.log |
 | 8001 | PDF2BPMN API | `cd /Users/uengine/robo-analyz/process-gpt-bpmn-extractor && .venv/bin/python run.py api --port 8001` | /tmp/pdf2bpmn-api.log |
 | 8002 | Domain Layer | `cd /Users/uengine/robo-analyz/domain-layer && venv/bin/uvicorn app.main:app --host 0.0.0.0 --port 8002` | /tmp/domain-layer.log |
