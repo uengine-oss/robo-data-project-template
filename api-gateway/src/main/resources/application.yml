@@ -68,7 +68,7 @@ spring:
             - RemoveRequestHeader=Origin
         
         - id: api-gateway-olap
-          uri: http://127.0.0.1:8002
+          uri: http://127.0.0.1:8007
           predicates:
             - Path=/api/gateway/olap/**
           filters:
@@ -221,10 +221,10 @@ spring:
             - RemoveRequestHeader=Origin
         
         # ============================================
-        # Data Platform OLAP Service (FastAPI) - Port 8002
+        # Data Platform OLAP Service (FastAPI) - Port 8007
         # ============================================
         - id: olap-service
-          uri: http://127.0.0.1:8002
+          uri: http://127.0.0.1:8007
           predicates:
             - Path=/olap/**
           filters:

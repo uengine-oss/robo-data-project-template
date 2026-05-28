@@ -102,3 +102,7 @@ Thumbs.db
 # robo-data-catalog/
 # robo-data-glossary/
 # robo-data-frontend/
+
+# Private Datas
+p_*
+.cursor
