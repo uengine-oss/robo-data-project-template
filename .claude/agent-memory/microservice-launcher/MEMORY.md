@@ -28,13 +28,15 @@ Working directory: /Users/uengine/robo-analyz
 | 8005 | What-If Simulator | `cd /Users/uengine/robo-analyz/what-if-simulator && .venv/bin/python run_api.py` | /tmp/what-if-simulator.log |
 | 8006 | Data Secure Guard | `cd /Users/uengine/robo-analyz/data-secure-guard && source .venv/bin/activate && uvicorn api.main:app --host 0.0.0.0 --port 8006` | /tmp/data-secure-guard.log |
 | 8089 | Agent Scheduler | `cd /Users/uengine/robo-analyz/agent-scheduler && source .venv/bin/activate && uvicorn app.main:app --host 0.0.0.0 --port 8089` | /tmp/agent-scheduler.log |
-| 3000 | Frontend Vue3 | `cd /Users/uengine/robo-analyz/robo-analyzer-vue3 && npm run dev -- --port 3000` | /tmp/frontend-vue3.log |
 | 9999 | A2A Server | `cd /Users/uengine/robo-analyz/process-gpt-bpmn-extractor && .venv/bin/python a2a_server.py` | /tmp/a2a-server.log |
 
 ## Health Check Endpoints
 - API Gateway (9000): GET /actuator/health -> 200
 - ANTLR Parser (8081): GET / -> 200 (NOT /actuator/health - returns 500, no actuator)
-- ROBO Analyzer (5502): GET /health -> 200
+- ROBO Data Analyzer (5502): GET /health -> 200
+- ROBO Data Catalog (5503): GET /health -> 200
+- ROBO Data Glossary (5504): GET /health -> 200
+- ROBO Data Frontend (3000): GET / -> 200
 - Neo4j Text2SQL (8000): GET /health -> 200
 - PDF2BPMN API (8001): GET /docs -> 200 (no /health endpoint)
 - Domain Layer (8002): GET /health -> 200
@@ -43,7 +45,6 @@ Working directory: /Users/uengine/robo-analyz
 - What-If Simulator (8005): GET /docs -> 200 (no /health endpoint)
 - Data Secure Guard (8006): GET /health -> 200
 - Agent Scheduler (8089): GET /health -> 200
-- Frontend Vue3 (3000): GET / -> 200
 - A2A Server (9999): GET /discover -> 200 (NOT / - returns 404)
 
 ## Critical Notes & Known Issues

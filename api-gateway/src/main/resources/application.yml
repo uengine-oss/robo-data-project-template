@@ -331,7 +331,7 @@ spring:
             - RemoveRequestHeader=Origin
         
         # ============================================
-        # Frontend (Vue3) - Port 3000
+        # Frontend (robo-data-frontend) - Port 3000
         # 모든 나머지 요청은 프론트엔드로 라우팅 (맨 마지막에 위치해야 함)
         # Vite 개발 서버가 IPv6(::1)로 바인딩되므로 localhost 사용
         # ============================================
