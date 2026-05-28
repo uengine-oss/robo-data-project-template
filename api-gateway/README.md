@@ -94,7 +94,7 @@ curl http://localhost:9000/actuator/gateway/routes
 
 프론트엔드에서는 게이트웨이 주소 하나만 사용하면 됩니다:
 
-### robo-analyzer-vue3
+### robo-data-frontend
 
 환경 변수 `VITE_API_GATEWAY_URL`을 설정하거나, 기본값 `http://localhost:9000` 사용.
 

@@ -19,9 +19,6 @@
 [submodule "process-gpt-bpmn-extractor"]
 	path = process-gpt-bpmn-extractor
 	url = https://github.com/uengine-oss/process-gpt-bpmn-extractor.git
-[submodule "robo-analyzer-vue3"]
-	path = robo-analyzer-vue3
-	url = https://github.com/uengine-oss/robo-analyzer-vue3.git
 [submodule "data-platform-olap"]
 	path = data-platform-olap
 	url = https://github.com/uengine-oss/data-platform-olap.git
