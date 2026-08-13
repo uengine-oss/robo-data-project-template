@@ -48,7 +48,11 @@ uploads/
 
 # === Large folders (samples, docs, installers) ===
 sample/
-docs/
+# docs/ 는 127MB 매뉴얼·PDF 때문에 무시한다. 다만 계약 문서는 여러 서비스가 참조하므로
+# 반드시 추적돼야 한다 — 디렉터리 자체를 무시하면 git 이 내려가지 않아 negation 이 먹지
+# 않으므로 `docs/*` 로 쓴다.
+docs/*
+!docs/catalog-schema.md
 backup/
 rwis-installer/
 langchain-text2sql/

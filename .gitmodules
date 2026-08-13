@@ -41,6 +41,6 @@
 	path = robo-data-analyzer
 	url = https://github.com/uengine-oss/robo-data-analyzer.git
 	branch = refactor
-[submodule "api-gateway"]
-	path = api-gateway
-	url = https://github.com/uengine-oss/robo-api-gateway.git
+[submodule "ontology-studio"]
+	path = ontology-studio
+	url = https://github.com/uengine-oss/ontology-studio.git

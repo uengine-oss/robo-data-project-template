@@ -1,0 +1,12 @@
+{
+  "mcpServers": {
+    "ontology-studio-build": {
+      "type": "http",
+      "url": "${ONTOLOGY_STUDIO_URL:-http://127.0.0.1:8000}/mcp/agent-bridge/build/"
+    },
+    "ontology-studio-answer": {
+      "type": "http",
+      "url": "${ONTOLOGY_STUDIO_URL:-http://127.0.0.1:8000}/mcp/agent-bridge/answer/"
+    }
+  }
+}
